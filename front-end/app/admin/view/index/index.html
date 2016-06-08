@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>网站管理登录-短租网站建设制作-短租微信公众平台开发-短租APP客户端开发-鹏程四站合一短租网站管理系统</title>
+        <meta name="keywords" content="短租网页设计,短租网站建设,短租网站制作,短租网站程序开发,短租公寓网站PHP程序源码,短租微信公众平台开发,短租APP客户端开发,鹏程四站合一短租网站管理系统" />
+        <meta name="description" content="鹏程四站合一短租网站管理系统专业提供短租网站建设,短租网页设计,短租网站制作,短租微信公众平台,短租APP客户端,短租网站程序开发等短租公寓整体网站建设解决方案,满足各种类型短租公寓网站建设开发定制需求.是短租公寓网站PHP程序源码首选开发平台。" />
+        <meta name="author" content="郑州鹏程计算机技术有限公司（www.pengchengsoft.com）">
+        <link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/all.css">
+        <link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/app.css">
+        <!--[if lte IE 7]>
+                <link href="__STATIC__/admin/css/ie7.css" rel="stylesheet">
+            <![endif]-->
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lte IE 9]>
+                <script src="__STATIC__/admin/other/html5shiv.min.js"></script>
+                <script src="__STATIC__/admin/other/respond.min.js"></script>
+            <![endif]-->
+        <!-- jquery -->
+        <script src="__STATIC__/admin/js/jquery-1.7.2.min.js"></script>
+        <script src="__STATIC__/admin/js/jquery.cookie.js"></script>
+        <!--[if lte IE 9]>
+                <script src="__STATIC__/admin/other/jquery.iframe-transport.js"></script>    
+            <![endif]-->
+        <!-- BJUI.all 分模块压缩版 -->
+        <script src="__STATIC__/admin/js/bjui-all.min.js"></script>
+        <!-- plugins -->
+        <!-- swfupload for uploadify && kindeditor -->
+        <script src="__STATIC__/admin/plugins/swfupload/swfupload.js"></script>
+        <!-- kindeditor -->
+        <script src="__STATIC__/admin/plugins/kindeditor_4.1.10/kindeditor-all.min.js"></script>
+        <script src="__STATIC__/admin/plugins/kindeditor_4.1.10/lang/zh_CN.js"></script>
+        <!-- colorpicker -->
+        <script src="__STATIC__/admin/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <!-- ztree -->
+        <script src="__STATIC__/admin/plugins/ztree/jquery.ztree.all-3.5.js"></script>
+        <!-- nice validate -->
+        <script src="__STATIC__/admin/plugins/niceValidator/jquery.validator.js"></script>
+        <script src="__STATIC__/admin/plugins/niceValidator/jquery.validator.themes.js"></script>
+        <!-- bootstrap plugins -->
+        <script src="__STATIC__/admin/plugins/bootstrap.min.js"></script>
+        <script src="__STATIC__/admin/plugins/bootstrapSelect/bootstrap-select.min.js"></script>
+        <script src="__STATIC__/admin/plugins/bootstrapSelect/defaults-zh_CN.min.js"></script>
+        <!-- icheck -->
+        <script src="__STATIC__/admin/plugins/icheck/icheck.min.js"></script>
+        <!-- dragsort -->
+        <script src="__STATIC__/admin/plugins/dragsort/jquery.dragsort-0.5.1.min.js"></script>
+        <!-- HighCharts -->
+        <script src="__STATIC__/admin/plugins/highcharts/highcharts.js"></script>
+        <script src="__STATIC__/admin/plugins/highcharts/highcharts-3d.js"></script>
+        <script src="__STATIC__/admin/plugins/highcharts/themes/gray.js"></script>
+        <!-- ECharts -->
+        <script src="__STATIC__/admin/plugins/echarts/echarts.js"></script>
+        <!-- other plugins -->
+        <script src="__STATIC__/admin/plugins/other/jquery.autosize.js"></script>
+        <link href="__STATIC__/admin/plugins/uploadify/css/uploadify.css" rel="stylesheet">
+        <script src="__STATIC__/admin/plugins/uploadify/scripts/jquery.uploadify.min.js"></script>
+        <script src="__STATIC__/admin/plugins/download/jquery.fileDownload.js"></script>
+        <!-- object js -->
+        <script type="text/javascript">
+            var static = "__STATIC__";
+            var root = "__ROOT__";
+        </script>
+        <script src="__STATIC__/admin/js/app.js"></script>
+    </head>
+
+    <body>
+        <!--[if lte IE 7]>
+            <div id="errorie"><div>您还在使用老掉牙的IE，正常使用系统前请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
+        <![endif]-->
+        <div id="bjui-window">
+            <header id="bjui-header">
+                <div class="bjui-navbar-header">
+                    <button type="button" class="bjui-navbar-toggle btn-default" data-toggle="collapse" data-target="#bjui-navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="bjui-navbar-logo" href="#"><img src="__STATIC__/admin/images/logo#.png" style="height: 62px;margin-left: 20px;margin-top: 4px;"></a>
+                </div>
+                <nav id="bjui-navbar-collapse">
+                    <ul class="bjui-navbar-right">
+                        <li class="datetime">
+                            <div> 欢迎您<b>&nbsp;&nbsp;&nbsp;&nbsp;admin</b></div>
+                        </li>
+                        <!--<li><a href="/duanzu/admin.php/Rbac/change" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-lock"></span> 修改密码&nbsp;</a></li>
+                            <li><a href="#">&nbsp;<span class="glyphicon glyphicon-user"></span> 我的资料</a></li>-->
+                        <li><a href="/duanzu/admin.php/Rbac/change" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-user"></span> </a></li>
+                        <li><a href="/admin/login/out">&nbsp;<span class="glyphicon glyphicon-off"></span> 我要注销</a></li>
+                        <li><a href="/duanzu/index.php" target="_blank">&nbsp;<span class="glyphicon glyphicon-home"></span> 网站首页</a></li>
+                        <!--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户 <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/duanzu/admin.php/Rbac/change" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-lock"></span> 修改密码&nbsp;</a></li>
+                                    <li><a href="#">&nbsp;<span class="glyphicon glyphicon-user"></span> 我的资料</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/duanzu/admin.php/Index/exits" class="red">&nbsp;<span class="glyphicon glyphicon-off"></span> 注销登陆</a></li>
+                                </ul>
+                            </li>-->
+                    </ul>
+                </nav>
+                <div id="bjui-hnav">
+                    <ul class="kjdh">
+                        <li><a href="/duanzu/admin.php/Article/lists" data-toggle="navtab" data-options="{ id:'Article-index', faicon:'caret-right'}" data-fresh="true">文章管理</a></li>
+                        <li><a href="/duanzu/admin.php/Room/rooms" data-toggle="navtab" data-options="{ id:'Room-rooms', faicon:'caret-right'}" data-fresh="true">客房管理</a></li>
+                        <li><a href="/duanzu/admin.php/Order/index" data-toggle="navtab" data-options="{ id:'Order-index', faicon:'caret-right'}" data-fresh="true">订单管理</a></li>
+                        <li><a href="/duanzu/admin.php/Comment/index" data-toggle="navtab" data-options="{ id:'Comment-index', faicon:'caret-right'}" data-fresh="true">点评管理</a></li>
+                        <li><a href="/duanzu/admin.php/Member/member" data-toggle="navtab" data-options="{ id:'Member-member', faicon:'caret-right'}" data-fresh="true">会员管理</a></li>
+                    </ul>
+                    <button type="button" class="btn-default bjui-hnav-more-left" title="导航菜单左移"><i class="fa fa-angle-double-left"></i></button>
+                    <div id="bjui-hnav-navbar-box">
+                        <ul id="bjui-hnav-navbar">
+                            <li class="active" style="border: 0;">
+                                <a href="javascript:;" data-toggle="slidebar" style="width: 0;height: 0;"></a>
+                                <div class="items hide" data-noinit="true" id="liu">
+                                    <ul class="menu-items" data-faicon="fa fa-cog" data-tit="网站设置">
+                                        <li><a href="__ROOT__/admin/system/index" data-toggle="navtab" data-options="{ id:'System-index', faicon:'caret-right'}" data-fresh="true">基本设置</a></li>
+                                        <li><a href="__ROOT__/admin/system/navigation" data-toggle="navtab" data-options="{ id:'System-navigation', faicon:'caret-right'}" data-fresh="true">导航设置</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn-default bjui-hnav-more-right" title="导航菜单右移"><i class="fa fa-angle-double-right"></i></button>
+                </div>
+            </header>
+            <div id="bjui-container" class="clearfix" style="padding-bottom: 10px;">
+                <div id="bjui-leftside">
+                    <div id="bjui-sidebar-s">
+                        <div class="collapse"></div>
+                    </div>
+                    <div id="bjui-sidebar" style="overflow-y: auto;overflow-x: hidden;">
+                        <div class="toggleCollapse">
+                            <h2><i class="fa fa-bars"></i> 导航栏 <i class="fa fa-bars"></i></h2><a href="javascript:;" class="lock"><i class="fa fa-lock"></i></a></div>
+                        <div class="panel-group panel-main" data-toggle="accordion" id="bjui-accordionmenu">
+                        </div>
+                    </div>
+                </div>
+                <div id="bjui-navtab" class="tabsPage">
+                    <div class="tabsPageHeader">
+                        <div class="tabsPageHeaderContent" style="margin:0">
+                            <span class="fa fa-home" style="font-size:13px;float:left;height:37px;line-height:37px;padding-left:10px;padding-right:20px;background: #fff;z-index: 30;">&nbsp;当前位置：<a href="/duanzu/admin.php/">首页</a> >> <span id="locations">我的主页</span></span>
+                            <ul class="navtab-tab nav nav-tabs" style="position: relative;margin-left:235px;min-width:1000%; border-bottom: none;">
+                                <li data-tabid="main" class="main active"><a href="javascript:;"><span>#maintab#</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="tabsLeft" style="height:38px;width:30px;position: absolute;left: 196px;z-index: 1025;"><i class="fa fa-angle-double-left" style="margin-top: 9px;"></i></div>
+                        <div class="tabsRight" style="height:38px;position: absolute;right: -2px;"><i class="fa fa-angle-double-right" style="margin-top: 9px;"></i></div>
+                    </div>
+                    <ul class="tabsMoreList">
+                        <li><a href="javascript:;">#maintab#</a></li>
+                    </ul>
+                    <div class="navtab-panel tabsPageContent">
+                        <div class="navtabPage unitBox">
+                            <div class="bjui-pageContent">
+                                <ul class="content_nav">
+                                    <li>
+                                        <a href="/duanzu/admin.php/Order/index/status/1" data-toggle="navtab" data-options="{ id:'Order-index1',title:'新订单'}" class="xdd">
+                                            <img src="/duanzu/Public/bestjui/images/xdd.png" />
+                                            <span class="p">新订单</span>
+                                            <span>11</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/duanzu/admin.php/Order/index/status/4" data-toggle="navtab" data-options="{ id:'Order-index4',title:'已付款订单'}" class="yfk">
+                                            <img src="/duanzu/Public/bestjui/images/yfk.png" />
+                                            <span class="p">已付款订单</span>
+                                            <span>65</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/duanzu/admin.php/Room/rooms" data-toggle="navtab" data-options="{ id:'Hotels-room',title:'短租客房'}" class="jdkf">
+                                            <img src="/duanzu/Public/bestjui/images/jdkf.png" />
+                                            <span class="p">短租客房</span>
+                                            <span>65</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/duanzu/admin.php/Member/member" data-toggle="navtab" data-options="{ id:'Member-member',title:'个人会员'}" class="grhy">
+                                            <img src="/duanzu/Public/bestjui/images/grhy.png" />
+                                            <span class="p">个人会员</span>
+                                            <span>61</span>
+                                        </a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="/duanzu/admin.php/Comment/index" data-toggle="navtab" data-options="{ id:'Comment-index',title:'酒店点评'}" class="jddp">
+                                            <img src="/duanzu/Public/bestjui/images/jddp.png" />
+                                            <span class="p">短租点评</span>
+                                            <span>81</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--<div style="margin:15px auto 0; width:100%;">-->
+                                <!--<div class="row" style="padding: 0; margin: 0;">-->
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"><i class="fa fa-pie-chart fa-fw" style="color: #7dcbf1;"></i><a href="/duanzu/admin.php/Data/order_from" data-toggle="navtab"  data-options="{ id:'Data-order_from'}" data-fresh="true" style="font-size:16px;">网络订单来源</a></h3></div>
+                                        <div class="panel-body">
+                                            <div style="mini-width:400px;height:250px" data-toggle="echarts" data-type="pie,funnel" data-url="/duanzu/admin.php/index/source"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"><i class="fa fa-globe" style="color: #7dcbf1;"></i><a href="/duanzu/admin.php/Data/keliu" data-toggle="navtab"  data-options="{ id:'Data-keliu'}" data-fresh="true" style="font-size:16px;">客流区域分布图</a></h3></div>
+                                        <div class="panel-body">
+                                            <div style="mini-width:400px;height:250px" data-toggle="echarts" data-type="map" data-url="/duanzu/admin.php/index/mapdate"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw" style="color: #7dcbf1;"></i><a href="/duanzu/admin.php/Data/order_status" data-toggle="navtab"  data-options="{ id:'Data-order_status'}" data-fresh="true" style="font-size:16px;">订单状态统计</a></h3></div>
+                                        <div class="panel-body">
+                                            <div style="mini-width:400px;height:250px" data-toggle="echarts" data-type="line" data-url="/duanzu/admin.php/index/bardata?type=year"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"><i class="fa fa-heart fa-fw" style="color: #7dcbf1;"></i>增值服务 <a href="doc/chart/echarts.html" data-toggle="navtab" data-id="doc-echarts" data-title="ECharts图表说明"></a></h3></div>
+                                        <div class="panel-body zengzhi">
+                                            <div style="cursor: default; background-color: rgba(0, 0, 0, 0);">
+                                                <div style="position: relative; overflow: hidden;">
+                                                    <div class="zfb">
+                                                        <span>支付宝收款</span><a href="/duanzu/admin.php/Basic/pay" data-toggle="navtab" data-id="Pay-pay" data-title="支付设置">设置</a>
+                                                    </div>
+                                                    <div class="dxb">
+                                                        <span>短信提醒</span><a href="/duanzu/admin.php/Basic/sms" data-toggle="navtab" data-id="Sms-index" data-title="短信设置">设置</a>
+                                                    </div>
+                                                    <div class="bzsc">
+                                                        <span>帮助手册</span><a href="javascript:">查看</a>
+                                                    </div>
+                                                    <div class="yssp">
+                                                        <span>演示视频</span><a href="javascript:">查看</a>
+                                                    </div>
+                                                    <div class="xtdz">
+                                                        <span>系统定制</span><a href="javascript:">查看</a>
+                                                    </div>
+                                                    <div class="sysq">
+                                                        <span>商业授权</span><a href="/duanzu/admin.php/Basic/authorize" data-toggle="navtab" data-id="authorize-index" data-title="商业授权">查看</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="bjui-footer" style="height: 30px;line-height: 30px; margin-top: 2px;">Copyright &copy; 2012 - 2018　<a href="http://www.pchotelcms.com/" target="_blank">鹏程四站合一短租网站管理系统 V4.0</a>&nbsp;&nbsp;&nbsp;&nbsp;郑州鹏程计算机技术有限公司出品
+        </footer>
+    </body>
+</html>

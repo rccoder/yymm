@@ -1,0 +1,123 @@
+<script type="text/javascript">
+    function pic_upload_success(file, data) {
+        var json = $.parseJSON(data)
+        if (data.statusCode == 200)
+            $(this).alertmsg('ok', data.message)
+        if (data.statusCode == 300)
+            $(this).alertmsg('error', data.message)
+        $(this).bjuiajax('ajaxDone', json)
+        if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
+            $('#j_custom_thumb').val(json.src).trigger('validate')
+            $('#j_custom_pic').html('<img src=__ROOT__/' + json.src + ' width="100" />')
+        }
+    }
+</script>
+<style type="text/css">
+    label.control-label{
+        width: 100px;
+    }
+</style>
+<form action="__ROOT__/admin/system/index" method="post" id="j_custom_form" data-toggle="ajaxform" data-alertmsg="false">
+    <div class="bjui-pageContent">
+        <table class="table-bordered  table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <label class="control-label x85" >
+                            网站LOGO：
+                        </label>
+                        <div style="display: inline-block; vertical-align: middle;">
+                            <span id="j_custom_logo">
+                                {if $web['thumb']}
+                                <img src="__ROOT__/{$web['thumb']}" alt="" style="max-width: 300px;"/>
+                                {/if}
+                            </span>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <label class="control-label x85" >
+                            上传LOGO：
+                        </label>
+                        <div style="display: inline-block; vertical-align: middle;">
+                            <div data-toggle="upload" data-uploader="__ROOT__/admin/Upload/index/dir/web" data-file-size-limit="1024000000" data-file-type-exts="*.jpg;*.png;*.gif;*.mpg" data-multi="true" data-auto="true" data-on-upload-success="pic_upload_success" data-icon="cloud-upload">
+                            </div>
+                            <input type="hidden" name="thumb" value="{$web['thumb']}" id="j_custom_thumb">
+                            <span id="j_custom_pic">
+                                <img src="" alt=""/>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_webname" class="control-label x85" title="title 针对搜索引擎设置的网页标题" >
+                            网站标题：
+                        </label>
+                        <input type="text" name="webname" id="j_custom_title" value="{$web.webname}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_keywords" class="control-label x85" title="meta keywords 针对搜索引擎设置的关键词" >
+                            网页关键词：
+                        </label>
+                        <input type="text" name="keywords" id="j_custom_keywords" value="{$web.keywords}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_note" class="control-label x85" title="meta description 针对搜索引擎设置的网页描述" >
+                            网页描述：
+                        </label>
+                        <textarea name="description" id="j_custom_note" data-toggle="autoheight" cols="80" rows="1">{$web.description}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_copyright" class="control-label x85" >
+                            网站版权：
+                        </label>
+                        <input type="text" name="copyright" id="j_custom_keywords" value="{$web.copyright}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_address" class="control-label x85" >
+                            网站地址：
+                        </label>
+                        <input type="text" name="address" id="j_custom_address" value="{$web.address}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_copyright" class="control-label x85" >
+                            备案号：
+                        </label>
+                        <input type="text" name="icp" id="j_custom_keywords" value="{$web.icp}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="bottom_phone" class="control-label x85" >
+                            网站底部电话：
+                        </label>
+                        <input type="text" name="webphone" id="bottom_phone" value="{$web.webphone}"  size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="page_but" style="margin-left:100px;">
+                            <ul>
+                                <li><button type="submit" class="but btn-blue" id="btn_submit" data-icon="save">保存</button></li>
+                                <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</form>

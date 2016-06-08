@@ -1,0 +1,71 @@
+<style type="text/css">
+    label.control-label{ width:85px;}
+</style>
+<form action="__ROOT__/admin/System/addnav" method="post" data-toggle="ajaxform">
+    <div class="bjui-pageContent">
+
+        <input type="hidden" name="id" value="{$id}" />
+        <table class="table-bordered table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="album_name" class="control-label x85">
+                            导航名称：
+                        </label>
+                        <input type="text" name="title" id="album_name" value="{$cateinfo.name}" size="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            父级栏目：
+                        </label>
+                        <select name="pid" data-toggle="selectpicker">
+                            <option value="0">顶级栏目</option>
+                            {volist name="list" id="v"}
+                            <option value="{$v.id}" {if $pid==$v.id}selected{/if}>{$v.name}</option>
+                            {/volist}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            链接地址：
+                        </label>
+                        <input type="text" name="url" id="url" value="{$cateinfo.url}" size="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            新窗口打开：
+                        </label>
+                        <input type="radio" name="target" value="1" data-toggle="icheck" data-label="是">
+                        <input type="radio" name="target" value="0" data-toggle="icheck" data-label="否">
+                    </td>
+                </tr>                 
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            是否显示：
+                        </label>
+                        <input type="radio" name="show" value="1" data-toggle="icheck" data-label="显示">
+                        <input type="radio" name="show" value="0" data-toggle="icheck" data-label="不显示">
+                    </td>
+                </tr>                
+                <tr>
+                    <td colspan="4">
+                        <div class="page_but" style="margin-left:85px;">
+                            <ul>
+                                <li><button type="submit" class="but btn-blue" id="btn_submit" data-icon="save">保存</button></li>
+                                <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</form>
