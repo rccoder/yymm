@@ -544,7 +544,69 @@ img {
     display: block;
 }
 
+/* 校区布局 */
+.xqbj{background: url(../img/bj.jpg) center top;}
+.xqbj .bread-crumbs {
+    color: #fff;
+}
+.xiaoqux{ width:100%;  padding-top: 56px;}
+.nav_fixed .xiaoqux .hd{}
+.xiaoqux .hd{float: left;width: 885px;height: 764px;overflow: hidden;}
+.hd1{background: url(../img/mapbj.png) -20px 21px no-repeat;}
+.hd2{background: url(../img/mapbj.png) -20px 7px no-repeat;}
+.xiaoqux .hd li{ float:left;}
+.xiaoqux .hd li.on{ z-index: 5;}
+.xiaoqux .bd{ margin-top: 24px;padding: 15px;float: left;width: 274px;height: 642px;border-top: 0;background: #0a3372;}
+.xiaoqux .lh{ overflow:hidden;  }
+.xiaoqux .lh li{ }
+.xiaoqux .lh li .p-img{width: 235px;height: 131px;padding: 25px 13px 0 13px;margin: 0 auto;text-align: center;background: none;}
+.xiaoqux .lh li .p-name{ height: 36px;line-height: 36px;word-break: break-all;word-wrap: break-word;overflow: hidden;color: #eff7ec;font-size: 18px;text-align: center;padding-top: 12px;}
+.xiaoqux .lh li .p-price{color: #eff7ec;height: 335px;}
+.xiaoqux .lh li .p-price .cont{padding: 8px 0 0;}
+.xiaoqux .lh li .page{padding: 10px 0;}
+.xiaoqux .lh li .page span{display: block;width: 54px; height: 18px; text-align: center; font-size: 12px; background: #ec6d51;color: #fff;margin-left: 7px;line-height: 18px; float: left;}
+.xiaoqux .lh li .p-price h3{font-size: 14px;font-weight: bold;line-height: 26px;padding-top: 15px;}
+.xiaoqux .lh li .p-price p{font-size: 12px; margin: 0;line-height: 20px;}
+.xiaoqux .lh li .p-price strong{ color:#cfcfcf; font-size:12px; }
+.xiaoqux .lh li .mover3{color: #eff7ec;padding: 15px 0 0;text-align: center;}
+.xiaoqux .lh li .mover3 p.s2{font-size: 12px;}
+.icon_lv,.icon_lan,.icon_hong{ position:relative;   height:94px; line-height:37px; text-align:center; width:80px;padding-top: 10px;font:normal 14px/37px "Microsoft YaHei"; _font-weight:bold; cursor: pointer;}
+.icon_lv{background: url(../img/lv.png) 7px top no-repeat;}
+.icon_hong{background: url(../img/hong.png) 7px top no-repeat;}
+.icon_lan{background: url(../img/lan.png) 7px top no-repeat;}
 
+.ldian{ float: left;position: relative;left: 130px;top: 93px;font-size: 30px;color: #17badb;font-weight: 500;}
+.ldian h{color: #d4fef4;}
+.youruix {float: left;position: relative;left: 70px;top: -120px;width: 770px;line-height: 24px;font-size: 14px;color: #eff7ec;}
+
+.ct01{left: 600px;top: 40px;}
+.ct02{left: 540px;top: 100px;}
+.ct03{left: 250px;top: 180px;}
+.ct03:hover{background:url("../img/xq_zjk.png") 2px -8px  no-repeat}
+
+.ct04{left: 557px;top: 193px;}
+.ct04:hover{background:url("../img/xq_bj.png") center -15px  no-repeat}
+.ct05{left: 315px;top: 244px;}
+.ct06{left: 195px;top: 270px;}
+.ct07{left: 142px;top: 321px;}
+.ct07:hover{background:url("../img/xq_sh.png") 2px -10px  no-repeat}
+
+.ct08{left: 43px;top: 378px;}
+.ct09{left: -245px;top: 264px;}
+.ct09:hover{background:url("../img/xq_xan.png") 2px -8px  no-repeat}
+.ct10{left: -365px;top: 314px;}
+.ct11{left: -343px;top: 334px;}
+.ct11:hover{background:url("../img/xq_wh.png") center -5px  no-repeat}
+
+.ct12{left: 524px;top: 300px;}
+.ct12:hover{background:url("../img/xq_gz.png") center -10px  no-repeat}
+
+.ct13{left: 408px;top: 340px;}
+.ct13:hover{background:url("../img/xq_zh.png") 2px -5px  no-repeat}
+
+.ct14{left: 390px;top:335px;}
+.page2{display:none}
+#pages span{cursor:pointer}
 /* 主页布局 */
 
 .mleft {
