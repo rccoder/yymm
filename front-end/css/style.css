@@ -327,7 +327,51 @@ img {
     background: #108FB4;
 }
 
+/* 试听浮动布局 */
+.waiKuangFu {
+    color: #fff;
+    height: 396px;
+    margin-left: 63%;
+    margin-top: -412px;
+    position: relative;
+    z-index: 100;
+    background: rgba(0,0,0,0.2);
+    width: 320px;
+}
+.waiKuangFu .fuChuangTitle {
+    text-align: center;
+    padding-top: 20px;
+}
+.waiKuangFu input {
+    padding-left: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555;
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    outline: none;
+}
 
+.waiKuangFu .yuYueButton {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    background: #108fb4;
+    font-size: 18px;
+    letter-spacing: 3px;
+    height: 38px;
+    line-height: 38px;
+    width: 280px;
+    margin: 40px auto 0px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-left: -10px;
+    cursor: pointer;
+}
+.waiKuangFu .yuYueButton:hover{
+    background-color: #077494;
+}
 /* 面包屑 */
 
 .bread-crumbs {

@@ -7,9 +7,8 @@
     <meta name="description" content="">
     <title>英语学校官方网站-用英语探索世界</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="script/jquery.min.js"></script>
-    <script type="text/javascript" src="script/slider.js"></script>
-    <script type="text/javascript" src="js/layer/layer.min.js"></script>
+    <script type="text/javascript" src="./script/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -64,10 +63,69 @@
         </ol>
     </div>
     <!--幻灯片结束    -->
+    <!-- 试听开始 -->
+    <div class="waiKuangFu" style="color:#fff;">
+        <h2 class="fuChuangTitle">
+      <img src="http://www.reading-china.com/images/top_title.png">
+    </h2>
+        <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+            <input type="hidden" name="action" value="post">
+            <input type="hidden" name="diyid" value="6">
+            <input type="hidden" name="do" value="2">
+            <div style="width:260px; margin:0px auto" cellpadding="0" cellspacing="1">
+                <div style="width:280px; height:60px; margin-top:10px;">
+                    <span style="text-align:left; height:40px; line-height:30px;">孩子姓名</span>
+                    <input type="text" name="name" id="name" class="intxt" style="width: 244px; height: 26px" value="" placeholder="孩子姓名">
+                </div>
+                <div style="width:280px; height:60px">
+                    <div>
+                        <span style="text-align:left; height:40px; line-height:30px;">联系电话</span>
+                        <span style="padding-left:72px; height:40px; line-height:30px;">孩子年龄</span>
+                    </div>
+                    <div>
+                        <input type="text" name="phone" id="phone" style="width:114px; height:26px; float:left;padding-left:10px; color:#666;" class="intxt" value="" placeholder="联系电话">
+
+                        <select name="number" id="number" class="intxt" style="width:125px; height:28px; float:left; margin-left:4px;padding-left:10px; color:#666; border-radius: 4px; background-color: #FFF">
+                            <option value="">孩子年龄</option>
+                            <option value="1">3-5岁</option>
+                            <option value="2">6-8岁</option>
+                            <option value="3">9-12岁</option>
+                            <option value="3">13-18岁</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cityMing" style="width:280px; height:60px">
+                    <span style="text-align:left;height:40px; line-height:30px;">所在城市</span>
+                    <span style="padding-left:73px;height:40px; line-height:30px;">所在校区</span>
+
+                    <span id="span_nativeplace">
+                      <select name="nativeplace_top" id="nativeplace_top" style="width:126px; height:28px; float:left;padding-left:6px; color:#666; border-radius: 4px; background-color: #FFF">
+                      <option value="0">请选择..</option>
+                      <option value="黑龙江">黑龙江</option>
+                      <option value="北京">北京</option>
+                      </select>
+                    </span> 
+
+                    <span id="span_nativeplace_son">
+                      <select name="nativeplace_son" id="nativeplace_son" style="width:126px; margin-left: 4px; height:28px; float:left;padding-left:6px; color:#666; border-radius: 4px; background-color: #FFF">
+                        <option value="0">请选择..</option>
+                      </select>
+                    </span>
+                    <!--验证码开始-->
+                    <div style="line-height:60px; margin-top: 60px">
+                        <div id="popup-captcha"></div>
+                        <img src="../jpg" alt="">
+                    </div>
+                    <!--验证码结束-->
+                </div>
+                <input type="submit" name="submit" id="popup-submit" value="免费预约" class="yuYueButton">
+            </div>
+        </form>
+    </div>
     <div class="blank15"></div>
     <!-- 面包屑 -->
     <div class="bread-crumbs w1190">
-      您当前的位置：<span class="core">首页<span>  
+        您当前的位置：<span class="core">首页<span>  
     </div>
     <!-- 首页新闻动态开始 -->
     <div class="news w1190">
@@ -123,12 +181,16 @@
         <div class=" cont fbj">
             <div class="f3">
                 <p class="f33"><span>哈尔滨英语有限公司<span> 电话：(+86)0451-58814339</span><span>京ICP备14018222号-1</span<span><a href="about.html" target="_blank">【关于我们】</a></span> </p>
-                <p class="f44">哈尔滨市xxxxxxx </p>
-                <p>Copyright © 2015 All Rights Reserved</p>
-            </div>
-        </div>
+        <p class="f44">哈尔滨市xxxxxxx </p>
+        <p>Copyright © 2015 All Rights Reserved</p>
     </div>
-    <script type="text/javascript" src="js/common.js"></script>
+    </div>
+    </div>
+    <script type="text/javascript" src="./script/slider.js"></script>
+    <script src="http://static.geetest.com/static/tools/gt.js"></script>
+    <script src="./script/gt.js"></script>
+    <script src="./script/data.js"></script>
+    <script src="./script/yuyueenum.js"></script>
 </body>
 
 </html>
