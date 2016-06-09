@@ -356,7 +356,7 @@ img {
 
 .news .news-top img {
     float: left;
-    margin-right: 20px;
+    margin: 10px 20px 20px 10px;
 }
 
 .news .news-main {
@@ -510,17 +510,25 @@ img {
 
 .ts_list .intro {
     cursor: pointer;
-    height: 95px;
+    height: 200px;
     width: 100%;
-    background: #fd6675;
-    border-bottom: 1px solid #109cda;
+    background: #ffffff;
+    color: #333;
     position: absolute;
     bottom: 30px;
     left: 0px;
     z-index: 9;
+    filter: alpha(Opacity=80);
+    -moz-opacity: 0.8;
+    -webkit-opacity: 0.8;
     display: none;
 }
 
+.ts_list .intro .title{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
 .ts_list .intro a {
     width: 60px;
     height: 60px;
