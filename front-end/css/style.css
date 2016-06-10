@@ -83,7 +83,7 @@ table {
 }
 
 p {
-    margin: 0 0 10px 0;
+    margin: 0;
 }
 
 h1,
@@ -209,7 +209,7 @@ img {
 /* 页头样式 */
 
 #headr {
-    background: url(../img/top.jpg) center top no-repeat;
+    background: url(../img/top.png) left top no-repeat;
     width: 100%;
     margin: 0 auto;
 }
@@ -236,9 +236,32 @@ img {
 }
 
 #headr .logo {
+    position: relative;
     height: 130px;
 }
 
+#headr .logo img {
+    margin-top: 16px
+}
+#headr .logo .logo-intro {
+    position: relative;
+    bottom: -20px;
+    line-height: 130px;
+    margin-left: 20px;
+    font-size: 16px;
+    letter-spacing: 4px;
+}
+#headr .logo .logo-intro .qd {
+    font-size: 22px;
+    color: #108fb4;
+    font-weight: bold;
+}
+#headr .logo .zs {
+    float: right;
+    margin-right: 20px;
+    margin-top: 40px;
+    line-height: 36px;
+}
 #headr .nav {
     background: #108fb4;
     line-height: 42px;
@@ -307,7 +330,7 @@ img {
 .biaojiBtn {
     position: absolute;
     left: 50%;
-    top: 340px;
+    top: 360px;
     margin-left: -70px;
 }
 
@@ -394,7 +417,7 @@ img {
 .news .news-top {
     height: 50px;
     color: #fffff;
-    background-color: #26A5CA;
+    background-color: #52afca;
     line-height: 50px;
 }
 
@@ -450,7 +473,95 @@ img {
     color: #108FB4;
 }
 
+/* 关于我们文字样式，集成新闻 */
+.news .about-content {
+    color: #333;
+    margin-top: 20px;
+    text-indent: 2em;
+    line-height: 1.5em;
+}
+/* 招商植入页面 */
+.zhaoshang>img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.zhaoshang .body {
+    overflow: hidden;
+}
+.zhaoshang .subchannellist {
+    text-align: center;
+}
 
+.zhaoshang .subchannellist .depth1 {
+    font-size: 14px;
+    font-weight: normal;
+}
+.zhaoshang .subchannellist li {
+    display: inline;
+    line-height: 24px;
+}
+
+.zhaoshang .subchannellist li a {
+    cursor: pointer;
+    color: #FFF;
+    padding: 20px 20px 10px;
+    line-height: 45px;
+    background: #108fb4;
+    border-bottom: 5px solid #108fb4;
+    margin-left: -4px;
+}
+.zhaoshang .subchannellist li a:hover {
+    border-bottom: 5px solid #22b9e6;
+}
+.zhaoshang .subchannellist .current a {
+    font-weight: normal;
+    color: #FFF;
+    background: #108fb4;
+    border-bottom: 5px solid #22b9e6;
+}
+.zhaoshang .body_content .zrys p {
+    color: #333;
+    line-height: 2.0em
+}
+.zhaoshang .body_content .zrys p span {
+    color: #108fb4;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+.zhaoshang .body_content .zrys .table {
+    margin: 40px 0;
+    width: 100%;
+    color: #333;
+}
+.zhaoshang .body_content .zrys .table tr {
+    height: 60px;
+}
+.zhaoshang .body_content .zrys .table tr td {
+    padding: 10px;
+}
+.zhaoshang .body_content .zrys .table tr:nth-child(2n) {
+    background-color: #52afca;
+}
+/* 课程理念布局 */
+.linian .linian-content {
+    margin-top: 30px;
+}
+.linian .linian-content-one .title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 2em;
+    color: #108FB4;
+
+}
+.linian .linian-content-one .content {
+    color: #333;
+    line-height: 2em;
+    text-indent: 2em;
+}
+.linian .linian-content p {
+    color: #333;
+}
 /* 乐学页面布局 */
 
 .lexue .post {
