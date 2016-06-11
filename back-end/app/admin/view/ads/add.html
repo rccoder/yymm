@@ -1,0 +1,100 @@
+<style type="text/css">
+    label.control-label{ width:85px;}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $.CurrentNavtab.find('#btn_submit').click(function() {
+            $.CurrentNavtab.find('#j_custom_form').bjuiajax('ajaxForm', {
+//              confirmMsg: '确认提交吗?',
+                callback: function(data) {
+                    if (data.statusCode == 200){
+                        $(this).alertmsg('ok', data.message)
+                        $(this).navtab('refresh','Article-lists');
+                        $(this).navtab('closeCurrentTab');
+                    }
+                    if (data.statusCode == 300)
+                        $(this).alertmsg('error', data.message)
+                }
+            })
+        })
+    })
+
+    function pic_upload_success(file, data) {
+        var json = $.parseJSON(data)
+        if (data.statusCode == 200)
+            $(this).alertmsg('ok', data.message)
+        if (data.status == 300)
+            $(this).alertmsg('error', data.message)
+        $(this).bjuiajax('ajaxDone', json)
+        if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {     
+            $('#j_custom_thumb').val(json.src);
+            $('#j_custom_pic').html('<img class="sp-thumb" src=__ROOT__/' + json.src + ' />');
+        }
+    }
+</script>
+<form action="__ROOT__/admin/ads/add" method="post" data-toggle="ajaxform">
+    <div class="bjui-pageContent">
+
+        <input type="hidden" name="id" value="{$info.id}" />
+        <input type="hidden" name="tid" value="{$Think.get.tid}" />
+        <table class="table-bordered table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="album_name" class="control-label x85">
+                            名称：
+                        </label>
+                        <input type="text" name="title" id="album_name" value="{$info.title}" size="30">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            链接地址：
+                        </label>
+                        <input type="text" name="url" id="url" value="{$info.url}" size="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label class="control-label x85">
+                            缩略图：
+                        </label>
+                        <div style="display: inline-block; vertical-align: middle;">
+                            <div data-toggle="upload" data-uploader="__ROOT__/admin/upload/index/dir/news" data-file-size-limit="1024000000" data-file-type-exts="*.jpg;*.png;*.gif;*.mpg" data-multi="true" data-auto="true" data-on-upload-success="pic_upload_success" data-icon="cloud-upload">
+                            </div>
+                            <span id="j_custom_pic">
+                            {if $info.thumb}
+                            <img  class="sp-thumb" src="__ROOT__/{$info.thumb}" alt=""/>
+                            {/if}
+                            </span>
+                            <input type="hidden" name="thumb" value="{$info.thumb}" id="j_custom_thumb">
+                        </div>
+                    </td>
+                </tr>
+                 
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            是否显示：
+                        </label>
+                        <input type="radio" name="status" value="1" data-toggle="icheck" data-label="显示" {if $info.status==1}checked{/if}>
+                        <input type="radio" name="status" value="0" data-toggle="icheck" data-label="不显示" {if $info.status==0}checked{/if}>
+                    </td>
+                </tr>                
+                <tr>
+                    <td colspan="4">
+                        <div class="page_but" style="margin-left:85px;">
+                            <ul>
+                                <li><button type="submit" class="but btn-blue" id="btn_submit" data-icon="save">保存</button></li>
+                                <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</form>

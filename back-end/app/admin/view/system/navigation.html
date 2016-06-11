@@ -43,8 +43,8 @@
                         {/if}
                     </td>
                     <td>
-                        <a href="__APP__/Category/index/id/{$v['id']}" class="btn btn-green" data-toggle="navtab" data-id="channellist-{$v.id}" data-title="修改-{$v.name}">修改</a>
-                        <a href="__APP__/Category/del/id/{$v['id']}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="子导航也会永久删除，确定要删除吗？">删除</a>
+                        <a href="__ROOT__/admin/system/addnav/id/{$v['id']}" class="btn btn-green"  data-toggle="dialog" data-id="system-addnav">修改</a>
+                        <a href="__ROOT__/admin/system/deletenav/id/{$v['id']}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="子导航也会永久删除，确定要删除吗？">删除</a>
                     </td>
                 </tr>
                 {/volist}

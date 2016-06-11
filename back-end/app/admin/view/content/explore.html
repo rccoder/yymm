@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	function changecate() {
+		$.CurrentNavtab.find('#towhere').css('display', 'inline-block');
+	}
+</script>
+<div class="bjui-pageHeader"  style="height:38px">
+	<a href="__ROOT__/admin/content/addexplore" class="btn btn-blue" data-toggle="dialog" data-id="explore_add">发布内容</a>
+</div>
+
+<div class="bjui-pageContent tableContent">
+	<form name="sortform" data-toggle="ajaxform" action="__APP__/Article/sort" method="post">
+		<table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+			<thead>
+				<tr style="height: 36px; line-height: 36px;">
+					<th style="background:#1078C1;color:#fff;" width="26">
+						<input type="checkbox" class="checkboxCtrl"  data-group="ids" data-toggle="icheck">
+					</th>
+					<th style="background:#1078C1;color:#fff;" data-order-field="articleid">ID</th>
+					<th style="background:#1078C1;color:#fff;" data-order-field="sort" width="50">排序</th>
+					<th style="background:#1078C1;color:#fff;">标题</th>
+					<th style="background:#1078C1;color:#fff;">简介</th>
+					<th style="background:#1078C1;color:#fff;" data-order-field="addtime">发表时间</th>
+					<th style="background:#1078C1;color:#fff;" width="100">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="content.data" id="v"}
+				<tr data-id="{$k}">
+					<td>
+						<input type="checkbox" name="ids" data-toggle="icheck" value="{$v.id}">
+					</td>
+					<td>{$v.id}</td>
+					<td>
+						<input type="text" class="ids" name="sort[{$v.id}]" value="{$v.sort}" style="width:100%" />
+					</td>
+					<td>{$v.title}</td>
+					<td>{$v.abstract}</td>
+					<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
+					<td>
+						<a href="__ROOT__/admin/content/addexplore/id/{$v.id}" class="btn btn-green" data-toggle="dialog"  data-id="explore_add">编辑</a>
+						<a href="__ROOT__/admin/content/deleteexplore/id/{$v.id}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+					</td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<button type="submit" class="btn-blue" data-icon="refresh" style="float:left">
+		更新排序
+	</button>
+	<div class="pages">
+		<span>每页&nbsp;</span>
+		<div class="selectPagesize">
+            <select data-toggle="selectpicker" data-toggle-change="changepagesize">
+                {volist name="page_list" id="v"}
+                <option value="{$v}">{$v}</option>
+                {/volist}
+			</select>
+		</div>
+		<span>&nbsp;条，共 {$content.total} 条</span>
+	</div>
+	<div class="pagination-box" data-toggle="pagination" data-total="{$total}" data-page-size="{$pagesize}" data-page-current="{$pageCurrent}">
+	</div>
+</div>

@@ -37,10 +37,10 @@ class System extends Base {
                 3=> ['show' => 1],  //开启显示
                 4=> ['show' => 0],  //关闭显示
             ];
-            $rs=$m->save($act[input('get.act')],['id' => input('id')]);
+            $rs=$m->save($act[input('get.act')],['id' => input('get.id')]);
             $rs?$this->json():$this->json(300);          
         }else{
-            $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):5;//每页显示条数
+            $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
             $map['order']='sort desc,id desc';
             $list=$m->getList($map);
             $this->assign('navigation',$list);
@@ -51,10 +51,24 @@ class System extends Base {
     public function addNav(){
         $m=new N();
         if(IS_POST){
-            $rs=$m->save($_POST);
-            $rs?$this->json():$this->json(300);
+            if(input('post.id')){
+                $rs=$m->save($_POST,['id'=>input('post.id')]);
+            }else{
+                $rs=$m->save($_POST);
+            }
+            $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'system-navigation']):$this->json(300);
         }else{
+            if(input('?get.id')){
+                $info=N::get(input('get.id'));
+                $this->assign('info',$info);
+            }            
             return $this->fetch();
         }
+    }
+    //删除导航
+    public function deleteNav(){
+        $info=N::get(input('get.id'));
+        $rs=$info->delete();
+        $rs?$this->json():$this->json(300);        
     }
 }

@@ -1,0 +1,90 @@
+<script type="text/javascript">
+	$(function() {
+		$.CurrentNavtab.find('#btn_submit').click(function() {
+			$.CurrentNavtab.find('#j_custom_form').bjuiajax('ajaxForm', {
+//				confirmMsg: '确认提交吗?',
+				callback: function(data) {
+					if (data.statusCode == 200){
+						$(this).alertmsg('ok', data.message)
+						$(this).navtab('refresh','Article-lists');
+						$(this).navtab('closeCurrentTab');
+					}
+					if (data.statusCode == 300)
+						$(this).alertmsg('error', data.message)
+				}
+			})
+		})
+	})
+
+	function pic_upload_success(file, data) {
+		var json = $.parseJSON(data)
+		if (data.statusCode == 200)
+			$(this).alertmsg('ok', data.message)
+		if (data.status == 300)
+			$(this).alertmsg('error', data.message)
+		$(this).bjuiajax('ajaxDone', json)
+		if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {		
+			$('#j_custom_thumb').val(json.src);
+			$('#j_custom_pic').html('<img class="sp-thumb" src=__ROOT__/' + json.src + ' />');
+		}
+	}
+</script>
+<form action="__ROOT__/admin/content/addexplore" method="post" data-toggle="validate" data-alertmsg="false">
+	<input type="hidden" name="id" value="{$info['id']}" />	
+	<div class="bjui-pageContent">
+		<table class="table-bordered table-condensed table-hover" width="100%">
+			<tbody>
+				<tr>
+					<td>
+						<label for="title" class="control-label x85">
+							标题：
+						</label>
+						<input type="text" name="title" id="title" value="{$info.title}" size="30">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<label class="control-label x85">
+							缩略图：
+						</label>
+						<div style="display: inline-block; vertical-align: middle;">
+							<div data-toggle="upload" data-uploader="__ROOT__/admin/upload/index/dir/news" data-file-size-limit="1024000000" data-file-type-exts="*.jpg;*.png;*.gif;*.mpg" data-multi="true" data-auto="true" data-on-upload-success="pic_upload_success" data-icon="cloud-upload">
+							</div>
+							<span id="j_custom_pic">
+							{if $info.thumb}
+                        	<img  class="sp-thumb" src="__ROOT__/{$info.thumb}" alt=""/>
+							{/if}
+							</span>
+							<input type="hidden" name="thumb" value="{$info.thumb}" id="j_custom_thumb">
+						</div>
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<label for="abstract" class="control-label x85" >
+							简介：
+						</label>
+						<textarea name="abstract" id="abstract"  cols="35" data-height="auto">{$info.abstract}</textarea>
+					</td>
+				</tr>							
+			</tbody>
+		</table>
+	</div>
+	<div class="bjui-pageFooter">
+		<ul>
+			<li  style="float: left;margin-left: 90px;">
+				<button type="submit" class="btn-default" data-icon="save">
+					保存
+				</button>
+			</li>
+			
+			<li style="float: left;">
+				<button type="button" class="btn-close" data-icon="close">
+					取消
+				</button>
+			</li>
+
+		</ul>
+	</div>
+</form>
+

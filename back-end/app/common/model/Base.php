@@ -8,7 +8,7 @@ class Base extends Model {
     public function getList($map=[]){
         $rs=$this->where($map['where'])
                 ->order($map['order'])
-                ->paginate($pagesize)
+                ->paginate($map['pagesize'])
                 ->toArray();
         return $rs;
     }

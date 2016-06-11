@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+{include file="public/header" /}
+<body>
+    <div id="headr">
+        <div class="logo">
+            <div class="w1190 cont">
+                <span class="fl">
+                    <img src="./img/logo.png" />
+                </span>
+                <span class="logo-intro">用<span class="qd">英语密码</span>，开启世界探索之旅</span>
+                <div class="zs">
+                    <div class="L" id="direct_call_a">
+                    <span style="color:black; font-weight: 500;">招商热线：</span>0451-87111188
+<br>
+                    <span style="color:black;  font-weight: 500;">报名热线：</span>0451-84333555
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="w1190 cont">
+                <ul>
+                    <li><a href="index.html" title="首页" class="blu">首页</a>
+                    </li>
+                    <li><a href="linian.html" title="课程理念">课程理念</a>
+                    </li>
+                    <li><a href="news.html" title="新闻动态">新闻动态</a>
+                    </li>
+                    <li><a href="lexue.html" title="乐学课堂">乐学课堂</a>
+                    </li>
+                    <li><a href="tansuo.html" title="探索世界">探索世界</a>
+                    </li>
+                    <li><a href="xiaoqu.html">校区</a></li>
+                    </li>
+                    <li><a href="zhaoshang.html" target="_blank" title="课程植入">课程植入</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="nf"></div>
+        </div>
+    </div>
+    <!--幻灯片开始    -->
+    <div style="width:100%; min-width:1002px; margin:0 auto 15px;   border-bottom:1px solid #b1b1b1;" class="contentImg">
+        <ul class="bannerImg">
+            <li style="background:url(./slider/1.png) center top no-repeat; display:block;">
+                <a href="#" style="display:block; width:100%; height:396px; z-index:99;"></a>
+            </li>
+            <li style="background:url(./slider/2.png) center top  no-repeat; display:none;">
+                <a href="#" style="display:block; width:100%; height:396px; z-index:99;"></a>
+            </li>
+            <li style="background:url(./slider/3.png) center top no-repeat; display:none;">
+                <a href="#" style="display:block; width:100%; height:396px; z-index:99;"></a>
+            </li>
+            <li style="background:url(./slider/4.png) center top no-repeat; display:none;">
+                <a href="#" style="display:block; width:100%; height:396px; z-index:99;"></a>
+            </li>
+        </ul>
+        <ol class="biaojiBtn">
+            <li class="currentBan">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+    <!--幻灯片结束    -->
+    <!-- 试听开始 -->
+    <div class="waiKuangFu" style="color:#fff;">
+        <h2 class="fuChuangTitle">
+      <img src="http://www.reading-china.com/images/top_title.png">
+    </h2>
+        <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+            <input type="hidden" name="action" value="post">
+            <input type="hidden" name="diyid" value="6">
+            <input type="hidden" name="do" value="2">
+            <div style="width:260px; margin:0px auto" cellpadding="0" cellspacing="1">
+                <div style="width:280px; height:60px; margin-top:10px;">
+                    <span style="text-align:left; height:40px; line-height:30px;">孩子姓名</span>
+                    <input type="text" name="name" id="name" class="intxt" style="width: 244px; height: 26px" value="" placeholder="孩子姓名">
+                </div>
+                <div style="width:280px; height:60px">
+                    <div>
+                        <span style="text-align:left; height:40px; line-height:30px;">联系电话</span>
+                        <span style="padding-left:72px; height:40px; line-height:30px;">孩子年龄</span>
+                    </div>
+                    <div>
+                        <input type="text" name="phone" id="phone" style="width:114px; height:26px; float:left;padding-left:10px; color:#666;" class="intxt" value="" placeholder="联系电话">
+
+                        <select name="number" id="number" class="intxt" style="width:125px; height:28px; float:left; margin-left:4px;padding-left:10px; color:#666; border-radius: 4px; background-color: #FFF">
+                            <option value="">孩子年龄</option>
+                            <option value="1">3-5岁</option>
+                            <option value="2">6-8岁</option>
+                            <option value="3">9-12岁</option>
+                            <option value="3">13-18岁</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cityMing" style="width:280px; height:60px">
+                    <span style="text-align:left;height:40px; line-height:30px;">所在城市</span>
+                    <span style="padding-left:73px;height:40px; line-height:30px;">所在校区</span>
+
+                    <span id="span_nativeplace">
+                      <select name="nativeplace_top" id="nativeplace_top" style="width:126px; height:28px; float:left;padding-left:6px; color:#666; border-radius: 4px; background-color: #FFF">
+                      <option value="请选择..">请选择..</option><option value="北京市">北京市</option><option value="天津市">天津市</option><option value="河北省">河北省</option><option value="山西省">山西省</option><option value="内蒙古自治区">内蒙古自治区</option><option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option><option value="黑龙江省">黑龙江省</option><option value="上海市">上海市</option><option value="江苏省">江苏省</option><option value="浙江省">浙江省</option><option value="安徽省">安徽省</option><option value="福建省">福建省</option><option value="江西省">江西省</option><option value="山东省">山东省</option><option value="河南省">河南省</option><option value="湖北省">湖北省</option><option value="湖南省">湖南省</option><option value="广东省">广东省</option><option value="广西壮族自治区">广西壮族自治区</option><option value="海南省">海南省</option><option value="重庆市">重庆市</option><option value="四川省">四川省</option><option value="贵州省">贵州省</option><option value="云南省">云南省</option><option value="西藏自治区">西藏自治区</option><option value="陕西省">陕西省</option><option value="甘肃省">甘肃省</option><option value="青海省">青海省</option><option value="宁夏回族自治区">宁夏回族自治区</option><option value="新疆维吾尔自治区">新疆维吾尔自治区</option><option value="台湾省">台湾省</option><option value="香港特别行政区">香港特别行政区</option><option value="澳门特别行政区">澳门特别行政区</option>
+                      </select>
+                    </span> 
+
+                    <span id="span_nativeplace_son">
+                      <select name="nativeplace_son" id="nativeplace_son" style="width:126px; margin-left: 4px; height:28px; float:left;padding-left:6px; color:#666; border-radius: 4px; background-color: #FFF">
+                        <option value="0">请选择..</option>
+                      </select>
+                    </span>
+                    <!--验证码开始-->
+                    <div style="line-height:60px; margin-top: 60px">
+                        <div id="popup-captcha"></div>
+                        <img src="../jpg" alt="">
+                    </div>
+                    <!--验证码结束-->
+                </div>
+                <input type="submit" name="submit" id="popup-submit" value="免费预约" class="yuYueButton">
+            </div>
+        </form>
+    </div>
+    <div class="blank15"></div>
+    <!-- 面包屑 -->
+    <div class="bread-crumbs w1190">
+        您当前的位置：<span class="core">首页<span>  
+    </div>
+    <!-- 首页新闻动态开始 -->
+    <div class="news w1190">
+      <div class="news-top">
+        <img src="./img/news.png" alt="">
+        新闻动态
+      </div>
+      <div class="news-main">
+        <!-- 普通新闻 -->
+        <div class="new-all new-general">
+          <div class="title">
+            新闻通知 >>
+          </div>
+          <div class="content">
+            <ul>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+            </ul>
+            <a href="" class="more">更多 >></a>
+          </div>
+        </div>
+        <!-- 乐学课堂 -->
+        <div class="new-all news-funclassroom">
+          <div class="title">
+            乐学课堂 >>
+          </div>
+          <div class="content">
+            <ul>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+              <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+               <li> <a href="">【每日新闻】新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻一新闻</a></li>
+            </ul>
+            <a href="" class="more">更多 >></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 首页新闻动态开始 -->
+{include file="public/footer" /}
+</body>
+</html>

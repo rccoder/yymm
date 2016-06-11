@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 06 月 11 日 12:35
+-- 生成日期: 2016 年 06 月 11 日 22:54
 -- 服务器版本: 5.5.40
 -- PHP 版本: 5.4.33
 
@@ -52,6 +52,71 @@ INSERT INTO `sp_admin` (`id`, `username`, `password`, `realname`, `mobile`, `ema
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `sp_ads`
+--
+
+CREATE TABLE IF NOT EXISTS `sp_ads` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `thumb` varchar(200) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `tid` int(11) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sp_content`
+--
+
+CREATE TABLE IF NOT EXISTS `sp_content` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `content` text,
+  `addtime` int(10) NOT NULL,
+  `cate` int(2) NOT NULL,
+  `thumb` varchar(100) DEFAULT NULL,
+  `abstract` varchar(200) DEFAULT NULL,
+  `sort` int(5) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `sp_content`
+--
+
+INSERT INTO `sp_content` (`id`, `title`, `content`, `addtime`, `cate`, `thumb`, `abstract`, `sort`) VALUES
+(2, '测试文章', '摘要摘要摘要摘要', 1465632037, 2, 'upload/news/2016-06-11/1c0e8ae04a4e7354742c4b7e5f0c06f7.png', '摘要', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sp_explore`
+--
+
+CREATE TABLE IF NOT EXISTS `sp_explore` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `abstract` varchar(500) DEFAULT NULL,
+  `addtime` int(10) NOT NULL,
+  `thumb` varchar(200) DEFAULT NULL,
+  `sort` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `sp_explore`
+--
+
+INSERT INTO `sp_explore` (`id`, `title`, `abstract`, `addtime`, `thumb`, `sort`) VALUES
+(3, '12331', '123', 1465653915, 'upload/news/2016-06-11/8df04c49ffdc3bc88cc1a337df70af01.png', 0);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `sp_navigation`
 --
 
@@ -62,6 +127,23 @@ CREATE TABLE IF NOT EXISTS `sp_navigation` (
   `target` int(1) DEFAULT '0',
   `show` int(1) DEFAULT '1',
   `sort` int(5) NOT NULL DEFAULT '0',
+  `pid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sp_order`
+--
+
+CREATE TABLE IF NOT EXISTS `sp_order` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `telephone` varchar(20) DEFAULT NULL,
+  `age` varchar(10) DEFAULT NULL,
+  `city` varchar(10) DEFAULT NULL,
+  `area` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

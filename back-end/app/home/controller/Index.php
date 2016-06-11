@@ -1,9 +1,8 @@
 <?php
 namespace app\home\controller;
 
-class Index{
+class Index extends Base{
     public function index(){
-    	echo 11;
-        return '';
+    	return $this->fetch();
     }
 }

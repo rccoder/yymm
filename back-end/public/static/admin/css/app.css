@@ -28,3 +28,7 @@
 .sp-login .login_box .form-group img {margin-top: 1px; height: 32px; vertical-align: top;}
 .sp-login .login_box .m {cursor: pointer;}
 .sp-login .bottom {text-align: center; font-size: 12px;}
+.sp-thumb{
+	width: 100px;
+	height: 60px;
+}

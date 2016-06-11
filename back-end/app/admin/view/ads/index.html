@@ -1,0 +1,65 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="__ROOT__/ads/system/index" method="get">
+    </form>
+    <a href="__ROOT__/admin/ads/add/tid/{$Think.get.tid}" class="btn btn-orange" data-toggle="dialog" data-id="system-addnav">添加栏目</a>
+</div>
+<div class="bjui-pageContent tableContent">
+    <form name="sortform" data-toggle="ajaxform" action="__ROOT__/ads/system/index" method="post">
+        <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+            <thead>
+                <tr style="height: 36px; line-height: 36px;">
+                    <th style="background:#1078C1;color:#fff;" style="background:#1078C1;color:#fff;" data-order-field="id">ID</th>
+                    <th style="background:#1078C1;color:#fff;" data-order-field="sort" width="50">排序</th>
+                    <th style="background:#1078C1;color:#fff;" style="background:#1078C1;color:#fff;">栏目名称</th>
+                    <th style="background:#1078C1;color:#fff;" style="background:#1078C1;color:#fff;">链接地址</th>
+                    <th style="background:#1078C1;color:#fff;" style="background:#1078C1;color:#fff;">状态</th>
+                    <th style="background:#1078C1;color:#fff;" style="background:#1078C1;color:#fff;">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {volist name="content.data" id="v"}
+                <tr data-id="{$k}">
+                    <td>{$v['id']}</td>
+                    <td>
+                        <input type="text" class="ids" name="sort[{$v.id}]" value="{$v.sort}" style="width:100%" />
+                    </td>
+                    <td>{$v['title']}</td>
+                    <td>
+                        <a target="_blank" href="{$v['url']}">{$v['url']}</a>
+                    </td>                  
+                    <td>
+                        {if $v['status']==1}
+                        <a href="__ROOT__/admin/ads/index/act/2/id/{$v['id']}" class="btn btn-green" data-toggle="doajax" data-confirm-msg="确定要关闭吗？">开启</a> 
+                        {else}
+                        <a href="__ROOT__/admin/ads/index/act/1/id/{$v['id']}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要开启吗？">关闭</a> 
+                        {/if}
+                    </td>
+                    <td>
+                        <a href="__ROOT__/admin/ads/add/id/{$v['id']}" class="btn btn-green"  data-toggle="dialog" data-id="ads-add">修改</a>
+                        <a href="__ROOT__/admin/ads/delete/id/{$v['id']}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="子导航也会永久删除，确定要删除吗？">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="bjui-pageFooter">
+    <button type="submit" class="btn-blue" data-icon="refresh" style="float:left">
+        更新排序
+    </button>
+    <div class="pages">
+        <span>每页&nbsp;</span>
+        <div class="selectPagesize">
+            <select data-toggle="selectpicker" data-toggle-change="changepagesize">
+                {volist name="page_list" id="v"}
+                <option value="{$v}">{$v}</option>
+                {/volist}
+            </select>
+        </div>
+        <span>&nbsp;条，共 {$content.total} 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="{$total}" data-page-size="{$pagesize}" data-page-current="{$pageCurrent}">
+    </div>
+</div>

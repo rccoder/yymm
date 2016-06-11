@@ -10,5 +10,9 @@ return [
     'upload_error'=>'上传失败',
     'handle_success'=>'操作成功',
     'handle_error'=>'操作失败',
-    'password_confirm_error'=>'两次确认密码不一致'
+    'password_confirm_error'=>'两次确认密码不一致',
+    'content_cate'=>[
+        1=>"新闻动态",
+        2=>"乐学课堂"
+    ]
 ];

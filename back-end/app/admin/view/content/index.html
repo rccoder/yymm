@@ -4,7 +4,7 @@
 	}
 </script>
 <div class="bjui-pageHeader"  style="height:38px">
-	<a href="__ROOT__/admin/content/add" class="btn btn-blue" data-toggle="dialog" data-width="1000" data-height="600">发布文章</a>
+	<a href="__ROOT__/admin/content/add" class="btn btn-blue" data-toggle="dialog" data-width="1000" data-height="600" data-id="content_add">发布文章</a>
 </div>
 
 <div class="bjui-pageContent tableContent">
@@ -19,30 +19,26 @@
 					<th style="background:#1078C1;color:#fff;" data-order-field="sort" width="50">排序</th>
 					<th style="background:#1078C1;color:#fff;">标题</th>
 					<th style="background:#1078C1;color:#fff;">分类</th>
-					<th style="background:#1078C1;color:#fff;">作者</th>
-					<th style="background:#1078C1;color:#fff;" data-order-field="status">推荐</th>
-					<th style="background:#1078C1;color:#fff;" data-order-field="addtime">添加时间</th>
+					<th style="background:#1078C1;color:#fff;" data-order-field="addtime">发表时间</th>
 					<th style="background:#1078C1;color:#fff;" width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
-				{volist name="list" id="v"}
+				{volist name="content.data" id="v"}
 				<tr data-id="{$k}">
 					<td>
-						<input type="checkbox" name="ids" data-toggle="icheck" value="{$v.articleid}">
+						<input type="checkbox" name="ids" data-toggle="icheck" value="{$v.id}">
 					</td>
-					<td>{$v.articleid}</td>
+					<td>{$v.id}</td>
 					<td>
-						<input type="text" class="ids" name="sort[{$v.articleid}]" value="{$v.sort}" style="width:100%" />
+						<input type="text" class="ids" name="sort[{$v.id}]" value="{$v.sort}" style="width:100%" />
 					</td>
 					<td style="color: {$v.color};{if $v.strong}font-weight: bold;{/if}">{$v.title}</td>
-					<td>{$v.name}</td>
-					<td>{$v.username}</td>
-					<td>{if $v.status==1}是{else}否{/if}</td>
+					<td>{$v.catename}</td>
 					<td>{$v.addtime}</td>
 					<td>
-						<a href="__APP__/Article/update/id/{$v.articleid}" class="btn btn-green" data-toggle="navtab" data-id="upload" data-title="编辑-{$v.title}">编辑</a>
-						<a href="__APP__/Article/del/id/{$v.articleid}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+						<a href="__ROOT__/admin/content/add/id/{$v.id}" class="btn btn-green" data-toggle="dialog"  data-id="content_add" data-width="1000" data-height="600">编辑</a>
+						<a href="__ROOT__/admin/content/delete/id/{$v.id}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
 					</td>
 				</tr>
 				{/volist}
@@ -64,7 +60,7 @@
                 {/volist}
 			</select>
 		</div>
-		<span>&nbsp;条，共 {$total} 条</span>
+		<span>&nbsp;条，共 {$content.total} 条</span>
 	</div>
 	<div class="pagination-box" data-toggle="pagination" data-total="{$total}" data-page-size="{$pagesize}" data-page-current="{$pageCurrent}">
 	</div>
