@@ -1,0 +1,46 @@
+<style type="text/css">
+	label.control-label{ width:130px;}
+</style>
+<div class="bjui-pageContent">
+	<form action="__ROOT__/admin/member/index" method="post" id="j_custom_form" data-toggle="ajaxform">
+			<table class="table-bordered table-condensed table-hover" width="100%">
+				<tbody>
+					<tr>
+						<td>
+							<label for="old_pwd" class="control-label x85">
+								旧密码：
+							</label>
+							<input type="password" name="pass" id="old_pwd">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="new_pwd" class="control-label x85">
+								新密码：
+							</label>
+							<input type="password" name="password" id="new_pwd">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="new_pwd2" class="control-label x85">
+								重复新密码：
+							</label>
+							<input type="password" name="password2" id="new_pwd2">
+						</td>
+					</tr>
+                <tr>
+					<td>
+						<div class="page_but" style="margin-left:130px;">
+                        <ul>
+                        <li><button type="submit" class="but btn-blue" id="btn_submit" data-icon="save">保存</button></li>
+                        <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+                        </ul>
+                        </div>
+					</td>
+				</tr>					
+				</tbody>
+			</table>			
+</div>
+</form>
+

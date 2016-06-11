@@ -9,5 +9,6 @@ return [
     'upload_success'=>'上传成功',
     'upload_error'=>'上传失败',
     'handle_success'=>'操作成功',
-    'handle_error'=>'操作失败'
+    'handle_error'=>'操作失败',
+    'password_confirm_error'=>'两次确认密码不一致'
 ];

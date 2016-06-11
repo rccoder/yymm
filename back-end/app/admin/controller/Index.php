@@ -5,7 +5,11 @@ namespace app\admin\controller;
 class Index extends Base {
 
     public function index() {
-        return $view->fetch();
+    	if(IS_POST){
+
+    	}else{
+    		return $this->fetch();
+    	}
     }
     
 }
