@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 05 月 28 日 18:11
+-- 生成日期: 2016 年 06 月 11 日 12:35
 -- 服务器版本: 5.5.40
--- PHP 版本: 5.2.17
+-- PHP 版本: 5.4.33
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,7 +47,35 @@ CREATE TABLE IF NOT EXISTS `sp_admin` (
 --
 
 INSERT INTO `sp_admin` (`id`, `username`, `password`, `realname`, `mobile`, `email`, `qq`, `address`, `loginip`, `logintime`, `error`, `errortime`) VALUES
-(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL, NULL, NULL, NULL, '', '', 0, 0);
+(1, 'admin', '5f8ec64977085720630d9ef95622519f', NULL, NULL, NULL, NULL, NULL, '', '', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sp_navigation`
+--
+
+CREATE TABLE IF NOT EXISTS `sp_navigation` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `url` varchar(200) DEFAULT NULL,
+  `title` varchar(200) DEFAULT NULL,
+  `target` int(1) DEFAULT '0',
+  `show` int(1) DEFAULT '1',
+  `sort` int(5) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `sp_system`
+--
+
+CREATE TABLE IF NOT EXISTS `sp_system` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `web` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
