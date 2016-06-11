@@ -10,8 +10,11 @@ class Content extends Base {
     }
     //添加文章
     public function add(){
+    	$m=new C();
     	if(IS_POST){
-
+    		$_POST['addtime']=time();
+            $rs=$m->save($_POST);
+            $rs?$this->json():$this->json(300);    		
     	}else{
     		if(input('?get.id')){
     			$info=C::get(input('get.id'));

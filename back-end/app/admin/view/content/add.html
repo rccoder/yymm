@@ -24,15 +24,13 @@
 			$(this).alertmsg('error', data.message)
 		$(this).bjuiajax('ajaxDone', json)
 		if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {		
-			$('#j_custom_thumb').val(json.thumb);
-			$('#j_custom_yuantu').val(json.yuantu);
-			$('#j_custom_pic').html('<img class="qg-thumb" src=__ROOT__' + json.thumb + ' />');
+			$('#j_custom_thumb').val(json.src);
+			$('#j_custom_pic').html('<img class="sp-thumb" src=__ROOT__/' + json.src + ' />');
 		}
 	}
 </script>
-<form action="__APP__/Single/index" method="post" data-toggle="validate" data-alertmsg="false">
-	<input type="hidden" name="id" value="{$info['id']}" />
-	<input type="hidden" name="btn_submit" value="true">	
+<form action="__ROOT__/admin/content/add" method="post" data-toggle="validate" data-alertmsg="false">
+	<input type="hidden" name="id" value="{$info['id']}" />	
 	<div class="bjui-pageContent">
 		<table class="table-bordered table-condensed table-hover" width="100%">
 			<tbody>
@@ -46,10 +44,10 @@
 				</tr>
 				<tr>
 					<td>
-						<label for="pid" class="control-label x85">
+						<label  class="control-label x85">
 							分类：
 						</label>
-						<select name="pid" data-toggle="selectpicker">
+						<select name="cate" data-toggle="selectpicker">
 							<option value="1">新闻动态</option>
 							<option value="2">乐学课堂</option>
 						</select>
@@ -65,38 +63,26 @@
 							</div>
 							<span id="j_custom_pic">
 							{if $info.thumb}
-                        	<img  class="qg-thumb" src="__ROOT__{$info.thumb}" alt=""/>
+                        	<img  class="sp-thumb" src="__ROOT__/{$info.thumb}" alt=""/>
 							{/if}
 							</span>
 							<input type="hidden" name="thumb" value="{$info.thumb}" id="j_custom_thumb">
-							<input type="hidden" name="yuantu" value="{$info.yuantu}" id="j_custom_yuantu">
-
 						</div>
 					</td>
 				</tr>				
 				<tr>
 					<td>
-						<label for="keywords" class="control-label x85" >
-							关键字：
-						</label>
-						<input type="text" name="keywords" id="keywords" value="{$info.keywords}" size="60">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="description" class="control-label x85" >
+						<label for="abstract" class="control-label x85" >
 							内容摘要：
 						</label>
-						<textarea name="description" id="description"  cols="35" data-height="auto">{$info.description}</textarea>
+						<textarea name="abstract" id="abstract"  cols="35" data-height="auto">{$info.abstract}</textarea>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<label for="j_custom_content" class="control-label x85">文章内容：</label>
 						<div style="display: inline-block; vertical-align: middle;">
-							<textarea name="content" id="j_form_content" class="j-content" style="width:800px;" data-toggle="kindeditor" data-minheight="200">
-								{$info.content}
-							</textarea>
+							<textarea name="content" id="j_form_content" class="j-content" style="width:800px;" data-toggle="kindeditor" data-minheight="200">{$info.content}</textarea>
 						</div>
 					</td>
 				</tr>
