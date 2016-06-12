@@ -18,14 +18,14 @@ class Content extends Base{
         //广告
         $tid=[1=>2,2=>3];
         $ads=db('ads')->where(['tid'=>$tid[input('cate')],'status'=>1])->find();
-        $this->assign('ads',$ads);        
+        $this->assign('ads',$ads);
     	return $this->fetch();        
     }
     //文章详情
     public function show(){
         $info=C::get(input('get.id'));
         $this->assign('info',$info->toArray());
-        print_r($info->toArray());
+        return $this->fetch();   
     }
     //探索世界
     public function explore(){

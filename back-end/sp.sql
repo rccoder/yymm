@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 06 月 12 日 11:14
+-- 生成日期: 2016 年 06 月 12 日 17:16
 -- 服务器版本: 5.5.40
 -- PHP 版本: 5.2.17
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `sp_ads` (
   `tid` int(11) NOT NULL,
   `sort` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- 转存表中的数据 `sp_ads`
@@ -74,7 +74,11 @@ INSERT INTO `sp_ads` (`id`, `title`, `url`, `thumb`, `status`, `tid`, `sort`) VA
 (2, '1', 'http://www.baidu.com/', 'upload/news/2016-06-12/6d87e92a7ca1c28bd5fe62f08a981b13.jpg', 1, 1, 0),
 (3, '2', 'http://hersface.com/', 'upload/news/2016-06-12/b8aaf8037cfc49b9ee7ea4584b8547c7.jpg', 1, 1, 0),
 (4, '3', 'http://www.baidu.com/', 'upload/news/2016-06-12/10610d1f894ff0c342baad85484061c1.jpg', 1, 1, 0),
-(5, '4', 'http://www.baidu.com/', 'upload/news/2016-06-12/929470112356d492c481f643de7099db.jpg', 1, 1, 0);
+(5, '4', '#', 'upload/news/2016-06-12/929470112356d492c481f643de7099db.jpg', 1, 1, 0),
+(7, '123', '#', 'upload/news/2016-06-12/2929f70ab5a26b53b79306c7039f1b7d.jpg', 1, 2, 0),
+(8, '123', '123', 'upload/news/2016-06-12/01f376b10c6440e43b76c9731cce74dc.jpg', 1, 3, 0),
+(9, '123', '#', 'upload/news/2016-06-12/9222ca13fb3f25966a6f4d0204df2fe7.jpg', 1, 4, 0),
+(10, '2222', 'http://www.hndrc.gov.cn/', 'upload/news/2016-06-12/11f1b3df461e40de5f4585d94782ede2.png', 1, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -92,14 +96,17 @@ CREATE TABLE IF NOT EXISTS `sp_content` (
   `abstract` varchar(200) DEFAULT NULL,
   `sort` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `sp_content`
 --
 
 INSERT INTO `sp_content` (`id`, `title`, `content`, `addtime`, `cate`, `thumb`, `abstract`, `sort`) VALUES
-(2, '测试文章', '摘要摘要摘要摘要', 1465632037, 1, 'upload/news/2016-06-12/da746206eec5316f660657bb8d1f0aeb.png', '摘要', 0);
+(2, '测试文章', '摘要摘要摘要摘要', 1465632037, 1, 'upload/news/2016-06-12/da746206eec5316f660657bb8d1f0aeb.png', '摘要', 0),
+(3, 'test', '111111111111', 1465711637, 2, '', '1111', 0),
+(4, 'asd22', 'asd', 1465711750, 1, '', 'asd', 0),
+(5, 'dada', 'dada', 1465712231, 1, '', 'dasdas', 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +146,21 @@ CREATE TABLE IF NOT EXISTS `sp_navigation` (
   `sort` int(5) NOT NULL DEFAULT '0',
   `pid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- 转存表中的数据 `sp_navigation`
+--
+
+INSERT INTO `sp_navigation` (`id`, `url`, `title`, `target`, `show`, `sort`, `pid`) VALUES
+(2, '/', '首页', 0, 1, 0, 0),
+(3, '/home/page/index/display/linian', '课程体系', 0, 1, 0, 0),
+(4, '/home/content/index/cate/1', '新闻动态', 0, 1, 0, 0),
+(5, '/home/content/index/cate/2', '乐学课堂', 0, 1, 0, 0),
+(6, '/home/content/explore', '探索世界', 0, 1, 0, 0),
+(7, '/home/page/index/display/xiaoqu', '校区', 0, 1, 0, 0),
+(8, '/home/page/index/display/zhaoshang', '课程植入', 0, 1, 0, 0),
+(9, '/home/page/index/display/about', '关于我们', 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 

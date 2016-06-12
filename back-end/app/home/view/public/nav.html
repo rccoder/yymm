@@ -17,20 +17,9 @@
     <div class="nav">
         <div class="w1190 cont">
             <ul>
-                <li><a href="__ROOT__/" title="首页" id="index">首页</a>
-                </li>
-                <li><a href="__ROOT__/home/page/index/display/linian" title="课程理念" id="linian">课程体系</a>
-                </li>
-                <li><a href="__ROOT__/home/content/index/cate/1" title="新闻动态" id="news">新闻动态</a>
-                </li>
-                <li><a href="__ROOT__/home/content/index/cate/2" title="乐学课堂" id="ketang">乐学课堂</a>
-                </li>
-                <li><a href="__ROOT__/home/content/explore" title="探索世界" id="explore">探索世界</a>
-                </li>
-                <li><a href="__ROOT__/home/page/index/display/xiaoqu" id="xiaoqu">校区</a></li>
-                </li>
-                <li><a href="__ROOT__/home/page/index/display/zhaoshang" title="课程植入" id="zhaoshang">课程植入</a></li>
-                <li><a href="__ROOT__/home/page/index/display/about" id="about">关于我们</a></li>
+                {volist name="nav" id="vo"}
+                <li><a href="{$vo['url']}" title="{$vo['title']}" {if $vo['target']==1}target="_blank"{/if}>{$vo['title']}</a>
+                {/volist}
             </ul>
         </div>
         <div class="nf"></div>

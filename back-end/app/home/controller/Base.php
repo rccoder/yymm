@@ -5,5 +5,8 @@ namespace app\home\controller;
 class Base extends \app\common\controller\Base{
     public function _initialize(){
         parent::_initialize();
+        //导航
+        $nav=db('navigation')->where('show',1)->order('sort desc,id asc')->select();
+        $this->assign('nav',$nav);        
     }
 }

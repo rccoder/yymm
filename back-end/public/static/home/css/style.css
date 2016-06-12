@@ -472,6 +472,18 @@ img {
     color: #108FB4;
 }
 
+.news .post-title {
+    text-align: center;
+    color:#333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px
+}
+
+.news .post-content {
+    color: #333;
+    line-height: 1.5em;
+}
 /* 关于我们文字样式，集成新闻 */
 .news .about-content {
     color: #333;
@@ -682,10 +694,6 @@ img {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-}
-.ts_list .intro .content {
-    padding: 10px;
-    line-height:1.5em;
 }
 .ts_list .intro a {
     width: 60px;
