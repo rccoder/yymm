@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    {include file="public/header" /}
+    <body>
+        {include file="public/nav" /}
+        <div class="blank15"></div>
+        <!-- 面包屑 -->
+        <div class="bread-crumbs w1190">
+            您当前的位置：<span class="core">{$catename}<span>  
+                    </div>
+                    <div class="blank15"></div>
+                    <div class="content w1190 cont">
+                        <div class="lexue w1190 cont">
+                            <img src="./img/news.jpg" class="w1190 cont"alt="">
+                            <div class="post">
+                                <ul>
+                                    <li>
+                                        {volist name="content.data" id="vo"}
+                                        <div class="one clearfix">
+                                            <div class="thumb">
+                                                <img src="__ROOT__/{$vo['thumb']}" alt="" style="width: 260px;height: 160px;">
+                                            </div>
+                                            <div class="intro">
+                                                <h3 class="title">
+                                                    {$vo['title']}
+                                                </h3>
+                                                <span class="data">{$vo['addtime']|date='Y年m月d日',###}</span>
+                                                <div class="abstract">
+                                                   {$vo['abstract']}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/volist}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="page-nav">
+                                {$page}
+                            </div>
+                        </div>
+                    </div>
+                    <!--页脚-->
+                    {include file="public/footer" /}
+                    </body>
+
+                    </html>

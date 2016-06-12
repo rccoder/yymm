@@ -72,36 +72,19 @@
                     <button type="button" class="bjui-navbar-toggle btn-default" data-toggle="collapse" data-target="#bjui-navbar-collapse">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="bjui-navbar-logo" href="#"><img src="__STATIC__/admin/images/logo#.png" style="height: 62px;margin-left: 20px;margin-top: 4px;"></a>
+                    <a style="display:none;" class="bjui-navbar-logo" href="#"><img src="__STATIC__/admin/images/logo#.png" style="height: 62px;margin-left: 20px;margin-top: 4px;"></a>
                 </div>
                 <nav id="bjui-navbar-collapse">
                     <ul class="bjui-navbar-right">
                         <li class="datetime">
                             <div> 欢迎您<b>&nbsp;&nbsp;&nbsp;&nbsp;admin</b></div>
                         </li>
-                        <!--<li><a href="/duanzu/admin.php/Rbac/change" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-lock"></span> 修改密码&nbsp;</a></li>
-                            <li><a href="#">&nbsp;<span class="glyphicon glyphicon-user"></span> 我的资料</a></li>-->
-                        <li><a href="/duanzu/admin.php/Rbac/change" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-user"></span> </a></li>
-                        <li><a href="/admin/login/out">&nbsp;<span class="glyphicon glyphicon-off"></span> 我要注销</a></li>
-                        <li><a href="/duanzu/index.php" target="_blank">&nbsp;<span class="glyphicon glyphicon-home"></span> 网站首页</a></li>
-                        <!--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户 <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/duanzu/admin.php/Rbac/change" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-lock"></span> 修改密码&nbsp;</a></li>
-                                    <li><a href="#">&nbsp;<span class="glyphicon glyphicon-user"></span> 我的资料</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="/duanzu/admin.php/Index/exits" class="red">&nbsp;<span class="glyphicon glyphicon-off"></span> 注销登陆</a></li>
-                                </ul>
-                            </li>-->
+                        <li><a href="__ROOT__/admin/member/index" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="200">&nbsp;<span class="glyphicon glyphicon-user"></span> </a></li>
+                        <li><a href="__ROOT__/admin/login/out">&nbsp;<span class="glyphicon glyphicon-off"></span> 我要注销</a></li>
+                        <li><a href="__ROOT__/" target="_blank">&nbsp;<span class="glyphicon glyphicon-home"></span> 网站首页</a></li>
                     </ul>
                 </nav>
                 <div id="bjui-hnav">
-                    <ul class="kjdh">
-                        <li><a href="/duanzu/admin.php/Article/lists" data-toggle="navtab" data-options="{ id:'Article-index', faicon:'caret-right'}" data-fresh="true">文章管理</a></li>
-                        <li><a href="/duanzu/admin.php/Room/rooms" data-toggle="navtab" data-options="{ id:'Room-rooms', faicon:'caret-right'}" data-fresh="true">客房管理</a></li>
-                        <li><a href="/duanzu/admin.php/Order/index" data-toggle="navtab" data-options="{ id:'Order-index', faicon:'caret-right'}" data-fresh="true">订单管理</a></li>
-                        <li><a href="/duanzu/admin.php/Comment/index" data-toggle="navtab" data-options="{ id:'Comment-index', faicon:'caret-right'}" data-fresh="true">点评管理</a></li>
-                        <li><a href="/duanzu/admin.php/Member/member" data-toggle="navtab" data-options="{ id:'Member-member', faicon:'caret-right'}" data-fresh="true">会员管理</a></li>
-                    </ul>
                     <button type="button" class="btn-default bjui-hnav-more-left" title="导航菜单左移"><i class="fa fa-angle-double-left"></i></button>
                     <div id="bjui-hnav-navbar-box">
                         <ul id="bjui-hnav-navbar">
@@ -110,12 +93,15 @@
                                 <div class="items hide" data-noinit="true" id="liu">
                                     <ul class="menu-items" data-faicon="fa fa-cog" data-tit="网站设置">
                                         <li><a href="__ROOT__/admin/system/index" data-toggle="navtab" data-options="{ id:'system-index', faicon:'caret-right'}" data-fresh="true">基本设置</a></li>
-                                        <li><a href="__ROOT__/admin/system/navigation" data-toggle="navtab" data-options="{ id:'system-navigation', faicon:'caret-right'}" data-fresh="true">导航设置</a></li>
-                                        <li><a href="__ROOT__/admin/ads/index/tid/1" data-toggle="navtab" data-options="{ id:'ads-index1', faicon:'caret-right'}" data-fresh="true">轮播设置</a></li>                                        
+                                        <li><a href="__ROOT__/admin/system/navigation" data-toggle="navtab" data-options="{ id:'system-navigation', faicon:'caret-right'}" data-fresh="true">导航设置</a></li>                                       
                                     </ul>
+                                    <ul class="menu-items" data-faicon="fa fa-cog" data-tit="轮播设置">
+                                        <li><a href="__ROOT__/admin/ads/index/tid/1" data-toggle="navtab" data-options="{ id:'ads-index1', faicon:'caret-right'}" data-fresh="true">首页轮播</a></li>  
+                                    </ul>                                    
                                     <ul class="menu-items" data-faicon="fa fa-cog" data-tit="内容管理">
                                         <li><a href="__ROOT__/admin/content/index" data-toggle="navtab" data-options="{ id:'content-index', faicon:'caret-right'}" data-fresh="true">文章管理</a></li>
-                                        <li><a href="__ROOT__/admin/content/explore" data-toggle="navtab" data-options="{ id:'content-explore', faicon:'caret-right'}" data-fresh="true">探索世界</a></li>                                        
+                                        <li><a href="__ROOT__/admin/content/explore" data-toggle="navtab" data-options="{ id:'content-explore', faicon:'caret-right'}" data-fresh="true">探索世界</a></li> 
+                                        <li><a href="__ROOT__/admin/content/order" data-toggle="navtab" data-options="{ id:'content-order', faicon:'caret-right'}" data-fresh="true">报名列表</a></li>                                                                                
                                     </ul>                                     
                                     <ul class="menu-items" data-faicon="fa fa-cog" data-tit="用户管理">
                                         <li><a href="__ROOT__/admin/member/index" data-toggle="navtab" data-options="{ id:'member-index', faicon:'caret-right'}" data-fresh="true">修改密码</a></li>
@@ -155,106 +141,108 @@
                     </ul>
                     <div class="navtab-panel tabsPageContent">
                         <div class="navtabPage unitBox">
-                            <div class="bjui-pageContent">
-                                <ul class="content_nav">
-                                    <li>
-                                        <a href="/duanzu/admin.php/Order/index/status/1" data-toggle="navtab" data-options="{ id:'Order-index1',title:'新订单'}" class="xdd">
-                                            <img src="/duanzu/Public/bestjui/images/xdd.png" />
-                                            <span class="p">新订单</span>
-                                            <span>11</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/duanzu/admin.php/Order/index/status/4" data-toggle="navtab" data-options="{ id:'Order-index4',title:'已付款订单'}" class="yfk">
-                                            <img src="/duanzu/Public/bestjui/images/yfk.png" />
-                                            <span class="p">已付款订单</span>
-                                            <span>65</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/duanzu/admin.php/Room/rooms" data-toggle="navtab" data-options="{ id:'Hotels-room',title:'短租客房'}" class="jdkf">
-                                            <img src="/duanzu/Public/bestjui/images/jdkf.png" />
-                                            <span class="p">短租客房</span>
-                                            <span>65</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/duanzu/admin.php/Member/member" data-toggle="navtab" data-options="{ id:'Member-member',title:'个人会员'}" class="grhy">
-                                            <img src="/duanzu/Public/bestjui/images/grhy.png" />
-                                            <span class="p">个人会员</span>
-                                            <span>61</span>
-                                        </a>
-                                    </li>
-                                    <li class="last">
-                                        <a href="/duanzu/admin.php/Comment/index" data-toggle="navtab" data-options="{ id:'Comment-index',title:'酒店点评'}" class="jddp">
-                                            <img src="/duanzu/Public/bestjui/images/jddp.png" />
-                                            <span class="p">短租点评</span>
-                                            <span>81</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!--<div style="margin:15px auto 0; width:100%;">-->
-                                <!--<div class="row" style="padding: 0; margin: 0;">-->
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title"><i class="fa fa-pie-chart fa-fw" style="color: #7dcbf1;"></i><a href="/duanzu/admin.php/Data/order_from" data-toggle="navtab"  data-options="{ id:'Data-order_from'}" data-fresh="true" style="font-size:16px;">网络订单来源</a></h3></div>
-                                        <div class="panel-body">
-                                            <div style="mini-width:400px;height:250px" data-toggle="echarts" data-type="pie,funnel" data-url="/duanzu/admin.php/index/source"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title"><i class="fa fa-globe" style="color: #7dcbf1;"></i><a href="/duanzu/admin.php/Data/keliu" data-toggle="navtab"  data-options="{ id:'Data-keliu'}" data-fresh="true" style="font-size:16px;">客流区域分布图</a></h3></div>
-                                        <div class="panel-body">
-                                            <div style="mini-width:400px;height:250px" data-toggle="echarts" data-type="map" data-url="/duanzu/admin.php/index/mapdate"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw" style="color: #7dcbf1;"></i><a href="/duanzu/admin.php/Data/order_status" data-toggle="navtab"  data-options="{ id:'Data-order_status'}" data-fresh="true" style="font-size:16px;">订单状态统计</a></h3></div>
-                                        <div class="panel-body">
-                                            <div style="mini-width:400px;height:250px" data-toggle="echarts" data-type="line" data-url="/duanzu/admin.php/index/bardata?type=year"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title"><i class="fa fa-heart fa-fw" style="color: #7dcbf1;"></i>增值服务 <a href="doc/chart/echarts.html" data-toggle="navtab" data-id="doc-echarts" data-title="ECharts图表说明"></a></h3></div>
-                                        <div class="panel-body zengzhi">
-                                            <div style="cursor: default; background-color: rgba(0, 0, 0, 0);">
-                                                <div style="position: relative; overflow: hidden;">
-                                                    <div class="zfb">
-                                                        <span>支付宝收款</span><a href="/duanzu/admin.php/Basic/pay" data-toggle="navtab" data-id="Pay-pay" data-title="支付设置">设置</a>
-                                                    </div>
-                                                    <div class="dxb">
-                                                        <span>短信提醒</span><a href="/duanzu/admin.php/Basic/sms" data-toggle="navtab" data-id="Sms-index" data-title="短信设置">设置</a>
-                                                    </div>
-                                                    <div class="bzsc">
-                                                        <span>帮助手册</span><a href="javascript:">查看</a>
-                                                    </div>
-                                                    <div class="yssp">
-                                                        <span>演示视频</span><a href="javascript:">查看</a>
-                                                    </div>
-                                                    <div class="xtdz">
-                                                        <span>系统定制</span><a href="javascript:">查看</a>
-                                                    </div>
-                                                    <div class="sysq">
-                                                        <span>商业授权</span><a href="/duanzu/admin.php/Basic/authorize" data-toggle="navtab" data-id="authorize-index" data-title="商业授权">查看</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--</div>-->
-                                <!--</div>-->
-                            </div>
+                            <!--暂时先用系统设置当主页-->
+<script type="text/javascript">
+    function pic_upload_success(file, data) {
+        var json = $.parseJSON(data)
+        if (data.statusCode == 200)
+            $(this).alertmsg('ok', data.message)
+        if (data.statusCode == 300)
+            $(this).alertmsg('error', data.message)
+        $(this).bjuiajax('ajaxDone', json)
+        if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
+            $.CurrentNavtab.find('#j_custom_thumb').val(json.src).trigger('validate')
+            $.CurrentNavtab.find('#j_custom_pic').html('<img src=__ROOT__/' + json.src + ' width="100" />')
+        }
+    }
+</script>
+<style type="text/css">
+    label.control-label{
+        width: 100px;
+    }
+</style>
+<form action="__ROOT__/admin/system/index" method="post" id="j_custom_form" data-toggle="ajaxform" data-alertmsg="false">
+    <div class="bjui-pageContent">
+        <table class="table-bordered  table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <label class="control-label x85" >
+                            网站LOGO：
+                        </label>
+                        <div style="display: inline-block; vertical-align: middle;">
+                            <span id="j_custom_logo">
+                                {if $web['thumb']}
+                                <img src="__ROOT__/{$web['thumb']}" alt="" style="max-width: 300px;"/>
+                                {/if}
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_webname" class="control-label x85" title="title 针对搜索引擎设置的网页标题" >
+                            网站标题：
+                        </label>
+                        <input type="text" name="webname" id="j_custom_title" value="{$web.webname}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_keywords" class="control-label x85" title="meta keywords 针对搜索引擎设置的关键词" >
+                            网页关键词：
+                        </label>
+                        <input type="text" name="keywords" id="j_custom_keywords" value="{$web.keywords}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_note" class="control-label x85" title="meta description 针对搜索引擎设置的网页描述" >
+                            网页描述：
+                        </label>
+                        <textarea name="description" id="j_custom_note" data-toggle="autoheight" cols="80" rows="1">{$web.description}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_copyright" class="control-label x85" >
+                            网站版权：
+                        </label>
+                        <input type="text" name="copyright" id="j_custom_keywords" value="{$web.copyright}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_address" class="control-label x85" >
+                            网站地址：
+                        </label>
+                        <input type="text" name="address" id="j_custom_address" value="{$web.address}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="j_custom_copyright" class="control-label x85" >
+                            备案号：
+                        </label>
+                        <input type="text" name="icp" id="j_custom_keywords" value="{$web.icp}" data-rule="required" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="bottom_phone" class="control-label x85" >
+                            网站底部电话：
+                        </label>
+                        <input type="text" name="webphone" id="bottom_phone" value="{$web.webphone}"  size="80">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</form>
+<!--暂时先用系统设置当主页-->
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace app\admin\controller;
 
 use app\admin\model\Content as C;
 use app\admin\model\Explore as E;
+use app\admin\model\Order as O;
 class Content extends Base {
 
     public function index() {
@@ -11,7 +12,7 @@ class Content extends Base {
     	$map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
         $map['order']='sort desc,id desc';
         $list=$m->getList($map);
-        $this->assign('content',$list);    	
+        $this->assign('content',$list); 
     	return $this->fetch();
     }
     //添加文章
@@ -72,6 +73,14 @@ class Content extends Base {
         $info=E::get(input('get.id'));
         $rs=$info->delete();
         $rs?$this->json():$this->json(300);
-    }    
-    
+    } 
+    //报名管理
+    public function order(){
+    	$m=new O();
+    	$map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
+        $map['order']='id desc';
+        $list=$m->getList($map);
+        $this->assign('content',$list); 
+    	return $this->fetch();
+    }
 }

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 06 月 11 日 22:54
+-- 生成日期: 2016 年 06 月 12 日 11:14
 -- 服务器版本: 5.5.40
--- PHP 版本: 5.4.33
+-- PHP 版本: 5.2.17
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -64,7 +64,17 @@ CREATE TABLE IF NOT EXISTS `sp_ads` (
   `tid` int(11) NOT NULL,
   `sort` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `sp_ads`
+--
+
+INSERT INTO `sp_ads` (`id`, `title`, `url`, `thumb`, `status`, `tid`, `sort`) VALUES
+(2, '1', 'http://www.baidu.com/', 'upload/news/2016-06-12/6d87e92a7ca1c28bd5fe62f08a981b13.jpg', 1, 1, 0),
+(3, '2', 'http://hersface.com/', 'upload/news/2016-06-12/b8aaf8037cfc49b9ee7ea4584b8547c7.jpg', 1, 1, 0),
+(4, '3', 'http://www.baidu.com/', 'upload/news/2016-06-12/10610d1f894ff0c342baad85484061c1.jpg', 1, 1, 0),
+(5, '4', 'http://www.baidu.com/', 'upload/news/2016-06-12/929470112356d492c481f643de7099db.jpg', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -89,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `sp_content` (
 --
 
 INSERT INTO `sp_content` (`id`, `title`, `content`, `addtime`, `cate`, `thumb`, `abstract`, `sort`) VALUES
-(2, '测试文章', '摘要摘要摘要摘要', 1465632037, 2, 'upload/news/2016-06-11/1c0e8ae04a4e7354742c4b7e5f0c06f7.png', '摘要', 0);
+(2, '测试文章', '摘要摘要摘要摘要', 1465632037, 1, 'upload/news/2016-06-12/da746206eec5316f660657bb8d1f0aeb.png', '摘要', 0);
 
 -- --------------------------------------------------------
 
@@ -112,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `sp_explore` (
 --
 
 INSERT INTO `sp_explore` (`id`, `title`, `abstract`, `addtime`, `thumb`, `sort`) VALUES
-(3, '12331', '123', 1465653915, 'upload/news/2016-06-11/8df04c49ffdc3bc88cc1a337df70af01.png', 0);
+(3, '12331', '123', 1465653915, 'upload/news/2016-06-12/724568c6434808fe20365d678d1516e6.png', 0);
 
 -- --------------------------------------------------------
 
@@ -144,8 +154,20 @@ CREATE TABLE IF NOT EXISTS `sp_order` (
   `age` varchar(10) DEFAULT NULL,
   `city` varchar(10) DEFAULT NULL,
   `area` varchar(10) DEFAULT NULL,
+  `addtime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `sp_order`
+--
+
+INSERT INTO `sp_order` (`id`, `name`, `telephone`, `age`, `city`, `area`, `addtime`) VALUES
+(1, '斌神', '15555555555', '没有填写', '请选择..', '0', NULL),
+(2, '斌神', '15555555555', '没有填写', '请选择..', '0', NULL),
+(3, '斌神', '15555555555', '没有填写', '请选择..', '0', NULL),
+(4, '斌神', '15555555555', '6-8岁', '河北省', '0', NULL),
+(5, '杨尚斌', '15555555555', '3-5岁', '广东省', '没有填写', 1465701124);
 
 -- --------------------------------------------------------
 
@@ -157,7 +179,14 @@ CREATE TABLE IF NOT EXISTS `sp_system` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `web` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `sp_system`
+--
+
+INSERT INTO `sp_system` (`id`, `web`) VALUES
+(1, '{"thumb":"upload\\/web\\/2016-06-12\\/702d8008d6683cdb4f9c3c76e9218aa6.png","webname":"\\u82f1\\u8bed\\u5b66\\u6821\\u5b98\\u65b9\\u7f51\\u7ad9-\\u7528\\u82f1\\u8bed\\u63a2\\u7d22\\u4e16\\u754c","keywords":"\\u82f1\\u8bed\\u5b66\\u6821,\\u5b98\\u65b9\\u7f51\\u7ad9,\\u82f1\\u8bed,\\u63a2\\u7d22\\u4e16\\u754c","description":"123","copyright":"123","address":"xxxxxxxxxxxxx","icp":"xxxxxxxxxxxxx","webphone":"xxxxxxxxxxxxx"}');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

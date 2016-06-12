@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+{include file="public/header" /}
+<body>
+{include file="public/nav" /}
+    <div class="blank15"></div>
+    <!-- 面包屑 -->
+    <div class="bread-crumbs w1190">
+        您当前的位置：<span class="core">探索世界<span>  
+    </div>
+    <div class="blank15"></div>
+    <div class="content w1190 cont">
+    <div class="tansuo w1190 cont ts_list">
+      <img src="./img/tansuo.jpg"  class="w1190 cont" alt="">
+      <ul>
+         {volist name="content.data" id="vo"}
+        <li>
+          <div class="intro">
+          <h4 class="title">{$vo['title']}</h4>
+          <div class="content">
+            {$vo['abstract']}
+          </div>
+           
+          </div>
+          <img src="__ROOT__/{$vo['thumb']}" id="theimg" /><span id="tit">{$vo['title']}</span>
+        </li>
+        {/volist}
+      </ul>
+    </div>
+    </div>
+    <!--页脚-->
+{include file="public/footer" /}
+<script type="text/javascript" src="__STATIC__/home/script/tansuo.js"></script>
+</body>
+
+</html>

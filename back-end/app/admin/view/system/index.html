@@ -7,8 +7,8 @@
             $(this).alertmsg('error', data.message)
         $(this).bjuiajax('ajaxDone', json)
         if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
-            $('#j_custom_thumb').val(json.src).trigger('validate')
-            $('#j_custom_pic').html('<img src=__ROOT__/' + json.src + ' width="100" />')
+            $.CurrentNavtab.find('#j_custom_thumb').val(json.src).trigger('validate')
+            $.CurrentNavtab.find('#j_custom_pic').html('<img src=__ROOT__/' + json.src + ' width="100" />')
         }
     }
 </script>

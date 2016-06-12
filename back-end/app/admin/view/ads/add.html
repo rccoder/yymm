@@ -2,23 +2,6 @@
     label.control-label{ width:85px;}
 </style>
 <script type="text/javascript">
-    $(function() {
-        $.CurrentNavtab.find('#btn_submit').click(function() {
-            $.CurrentNavtab.find('#j_custom_form').bjuiajax('ajaxForm', {
-//              confirmMsg: '确认提交吗?',
-                callback: function(data) {
-                    if (data.statusCode == 200){
-                        $(this).alertmsg('ok', data.message)
-                        $(this).navtab('refresh','Article-lists');
-                        $(this).navtab('closeCurrentTab');
-                    }
-                    if (data.statusCode == 300)
-                        $(this).alertmsg('error', data.message)
-                }
-            })
-        })
-    })
-
     function pic_upload_success(file, data) {
         var json = $.parseJSON(data)
         if (data.statusCode == 200)
@@ -26,9 +9,9 @@
         if (data.status == 300)
             $(this).alertmsg('error', data.message)
         $(this).bjuiajax('ajaxDone', json)
-        if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {     
-            $('#j_custom_thumb').val(json.src);
-            $('#j_custom_pic').html('<img class="sp-thumb" src=__ROOT__/' + json.src + ' />');
+        if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
+            $.CurrentDialog.find('#j_custom_thumb').val(json.src);
+            $.CurrentDialog.find('#j_custom_pic').html('<img class="sp-thumb" src=__ROOT__/' + json.src + ' />');
         }
     }
 </script>
@@ -65,22 +48,22 @@
                             <div data-toggle="upload" data-uploader="__ROOT__/admin/upload/index/dir/news" data-file-size-limit="1024000000" data-file-type-exts="*.jpg;*.png;*.gif;*.mpg" data-multi="true" data-auto="true" data-on-upload-success="pic_upload_success" data-icon="cloud-upload">
                             </div>
                             <span id="j_custom_pic">
-                            {if $info.thumb}
-                            <img  class="sp-thumb" src="__ROOT__/{$info.thumb}" alt=""/>
-                            {/if}
+                                {if $info.thumb}
+                                <img  class="sp-thumb" src="__ROOT__/{$info.thumb}" alt=""/>
+                                {/if}
                             </span>
                             <input type="hidden" name="thumb" value="{$info.thumb}" id="j_custom_thumb">
                         </div>
                     </td>
                 </tr>
-                 
+
                 <tr>
                     <td>
                         <label class="control-label x85">
                             是否显示：
                         </label>
                         <input type="radio" name="status" value="1" data-toggle="icheck" data-label="显示" {if $info.status==1}checked{/if}>
-                        <input type="radio" name="status" value="0" data-toggle="icheck" data-label="不显示" {if $info.status==0}checked{/if}>
+                               <input type="radio" name="status" value="0" data-toggle="icheck" data-label="不显示" {if $info.status==0}checked{/if}>
                     </td>
                 </tr>                
                 <tr>

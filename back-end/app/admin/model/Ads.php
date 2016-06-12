@@ -1,6 +1,6 @@
 <?php
 namespace app\admin\model;
-//navigation模型
+//ads模型
 class Ads extends Base{
 
 }

@@ -16,6 +16,7 @@ class Ads extends Base {
         }else{
             $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
             $map['order']='sort desc,id desc';
+            $map['where']=['tid'=>input('get.tid')];
             $list=$m->getList($map);
             $this->assign('content',$list);
             return $this->fetch();
@@ -29,7 +30,7 @@ class Ads extends Base {
             }else{
                 $rs=$m->save($_POST);
             }
-            $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'system-navigation']):$this->json(300);
+            $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'ads-index1']):$this->json(300);
         }else{
             if(input('?get.id')){
                 $info=A::get(input('get.id'));
