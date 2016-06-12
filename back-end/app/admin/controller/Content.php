@@ -23,7 +23,7 @@ class Content extends Base {
                 $rs=$m->save($_POST,['id'=>input('post.id')]);
             }else{
                 $_POST['addtime']=time();
-                $rs=$m->save($_POST);
+                $rs=$m->insert($_POST);
             }
             $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'content-index']):$this->json(300);    		
     	}else{
