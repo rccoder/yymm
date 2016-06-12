@@ -13,10 +13,18 @@
                 {/volist}
             </ul>
             <ol class="biaojiBtn">
+                <!-- 这个注释不能删除 -->
+                <!--
+                    {$a = 1}
+                -->
+                {volist name="ads" id="vo"}
+                <li>{$a++}</li>
+                <!--
                 <li class="currentBan">1</li>
                 <li>2</li>
                 <li>3</li>
-                <li>4</li>
+                -->
+                {/volist}
             </ol>
         </div>
         <!--幻灯片结束    -->

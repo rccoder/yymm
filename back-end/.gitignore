@@ -1,3 +1,5 @@
+/app/database.php
 /app/runtime/
 /nbproject/private/
 /public/upload/
+/public/static/admin/plugins/kindeditor_4.1.10/
