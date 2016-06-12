@@ -15,11 +15,10 @@
 					<th style="background:#1078C1;color:#fff;" width="26">
 						<input type="checkbox" class="checkboxCtrl"  data-group="ids" data-toggle="icheck">
 					</th>
-					<th style="background:#1078C1;color:#fff;" data-order-field="articleid">ID</th>
-					<th style="background:#1078C1;color:#fff;" data-order-field="sort" width="50">排序</th>
+					<th style="background:#1078C1;color:#fff;">ID</th>
 					<th style="background:#1078C1;color:#fff;">标题</th>
 					<th style="background:#1078C1;color:#fff;">简介</th>
-					<th style="background:#1078C1;color:#fff;" data-order-field="addtime">发表时间</th>
+					<th style="background:#1078C1;color:#fff;">发表时间</th>
 					<th style="background:#1078C1;color:#fff;" width="100">操作</th>
 				</tr>
 			</thead>
@@ -30,9 +29,6 @@
 						<input type="checkbox" name="ids" data-toggle="icheck" value="{$v.id}">
 					</td>
 					<td>{$v.id}</td>
-					<td>
-						<input type="text" class="ids" name="sort[{$v.id}]" value="{$v.sort}" style="width:100%" />
-					</td>
 					<td>{$v.title}</td>
 					<td>{$v.abstract}</td>
 					<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
@@ -48,9 +44,6 @@
 </div>
 
 <div class="bjui-pageFooter">
-	<button type="submit" class="btn-blue" data-icon="refresh" style="float:left">
-		更新排序
-	</button>
 	<div class="pages">
 		<span>每页&nbsp;</span>
 		<div class="selectPagesize">

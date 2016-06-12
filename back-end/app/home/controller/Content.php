@@ -17,6 +17,12 @@ class Content extends Base{
         $this->assign('catename',$cate[input('cate')]);       
     	return $this->fetch();        
     }
+    //文章详情
+    public function show(){
+        $info=C::get(input('get.id'));
+        $this->assign('info',$info->toArray());
+        print_r($info->toArray());
+    }
     //探索世界
     public function explore(){
         $m=new E();
