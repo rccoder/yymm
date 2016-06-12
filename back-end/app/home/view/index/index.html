@@ -13,9 +13,9 @@
                 {/volist}
             </ul>
             <ol class="biaojiBtn">
-            {volist name="ads" id="vo"}
-            <li {if $i==1}class="currentBan"{/if}>{$i}</li>
-            {/volist}
+                {volist name="ads" id="vo"}
+                <li {if $i==1}class="currentBan"{/if}>{$i}</li>
+                {/volist}
             </ol>
         </div>
         <!--幻灯片结束    -->
@@ -75,11 +75,11 @@
         <!-- 面包屑 -->
         <div class="bread-crumbs w1190">
             您当前的位置：<span class="core">首页<span>  
-                    </div>
+        </div>
                     <!-- 首页新闻动态开始 -->
                     <div class="news w1190">
                         <div class="news-top">
-                            <img src="./img/news.png" alt="">
+                            <img src="__STATIC__/home/img/news.png" alt="">
                             新闻动态
                         </div>
                         <div class="news-main">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 首页新闻动态开始 -->
+                    <!-- 首页新闻动态结束 -->
                     {include file="public/footer" /}
                     <script type="text/javascript" src="__STATIC__/home/script/slider.js"></script>
                     <script src="http://static.geetest.com/static/tools/gt.js"></script>

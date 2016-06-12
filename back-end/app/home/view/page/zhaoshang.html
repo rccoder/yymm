@@ -9,9 +9,7 @@
         您当前的位置：<span class="core">课程植入<span>  
     </div>
     <div class="zhaoshang w1190  cont">
-        {if $ads}
-        <img src="__ROOT__/{$ads['thumb']}" class="w1190 cont"alt="">
-        {/if}
+        <img src="__STATIC__/home/slider/zhiru.png" alt="">
         <div class="body">
             <ul class="subchannellist">
                 <li class="depth1 current"><a>植入优势</a></li>
@@ -21,9 +19,12 @@
         <div class="body_content">
             <div class="content content1 news w1190">
                 <div class="news-top">
-                    <img src="./img/news.png" alt="">
+                    {if $ads}
+     <img src="__ROOT__/{$ads['thumb']}" class="w1190 cont"alt="">
+       {/if}
                     植入优势
                 </div>
+                <div class="blank15"></div>
                 <div class="zrys">
                     <p><br></p>
                     <p>
@@ -75,7 +76,7 @@
             </div>
             <div class="content content1 news w1190" style="display: none">
                 <div class="news-top">
-                    <img src="./img/news.png" alt="">
+                    <img src="__STATIC__/home/img/news.png" alt="">
                     支持服务
                 </div>
                 <div class="zrys">
@@ -192,8 +193,8 @@
                         <span style="display: block;margin: 10px auto; width: 500px">标准化少儿培训基地 —— 授之以渔教育校区</span>
                     </p>
                     <p style="margin-left: 100px ">
-                        <img src="./img/zhaoshang1.jpg" alt="">
-                        <img src="./img/zhaoshang2.jpg" alt="">
+                        <img src="__STATIC__/home/img/zhaoshang1.jpg" alt="">
+                        <img src="__STATIC__/home/img/zhaoshang2.jpg" alt="">
                         <div class="blank15"></div>
                     </p>
                 </div>

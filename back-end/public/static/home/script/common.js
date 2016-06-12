@@ -1,4 +1,25 @@
 $(function(){
+   // 导航栏高亮
+   var navlight = function() {
+    var location = window.location.pathname;
+    var list = ["linian", "news", "ketang", "explore", "xiaoqu", "zhaoshang", "about"];
+    var flag = 0;
+    for(var i = 0, l = list.length; i < l; i++) {
+      if(location.indexOf(list[i]) > -1) {
+        var str = "#" + list[i];
+        $(str).addClass("blu");
+        flag = 1;
+        break;
+      }
+    }
+    
+    if(flag == 0) {
+      console.log(111)
+      $("#index").addClass("blu");
+    }
+   }
+   navlight();
+
    //报名信息
    $("#submit").click(function(){
        var data={

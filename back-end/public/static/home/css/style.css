@@ -683,6 +683,10 @@ img {
     font-weight: bold;
     text-align: center;
 }
+.ts_list .intro .content {
+    padding: 10px;
+    line-height:1.5em;
+}
 .ts_list .intro a {
     width: 60px;
     height: 60px;
