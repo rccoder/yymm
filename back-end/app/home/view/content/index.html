@@ -11,7 +11,9 @@
                     <div class="blank15"></div>
                     <div class="content w1190 cont">
                         <div class="lexue w1190 cont">
-                            <img src="./img/news.jpg" class="w1190 cont"alt="">
+                            {if $ads}
+                            <img src="__ROOT__/{$ads['thumb']}" class="w1190 cont"alt="">
+                            {/if}
                             <div class="post">
                                 <ul>
                                     <li>

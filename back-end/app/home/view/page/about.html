@@ -11,24 +11,16 @@
      <!--幻灯片开始    -->
     <div style="width:100%; min-width:1002px; margin:0 auto 15px;   border-bottom:1px solid #b1b1b1;" class="contentImg">
         <ul class="bannerImg">
-            <li style="background:url(./slider/1.png) center top no-repeat; display:block;">
-                <a href="http://www.reading-china.com/news1/chuangxinyuedumoshi_ruidingranghaiziqieshiaishangyueduaishangyingyu_1313.html" style="display:block; width:100%; height:396px; z-index:99;"></a>
+            {volist name="ads" id="vo"}
+            <li style="background:url(__ROOT__/{$vo['thumb']}) center top no-repeat; display:{if $i==1}block{else}none{/if};">
+                <a href="{$vo['url']}" style="display:block; width:100%; height:396px; z-index:99;"></a>
             </li>
-            <li style="background:url(./slider/2.png) center top  no-repeat; display:none;">
-                <a href="http://www.reading-china.com/news1/ruidingkaichuangshaoeryingyupeixunyingwenyueduxinlinian_1312.html" style="display:block; width:100%; height:396px; z-index:99;"></a>
-            </li>
-            <li style="background:url(./slider/3.png) center top no-repeat; display:none;">
-                <a href="http://www.reading-china.com/news1/ninfuzefuyue_ruidingfuzeqingsonggaoxiao__1315.html" style="display:block; width:100%; height:396px; z-index:99;"></a>
-            </li>
-            <li style="background:url(./slider/4.png) center top no-repeat; display:none;">
-                <a href="http://www.reading-china.com/news1/ruidingdujiajieduweilaiyingwenyueduxinqushi_1311.html" style="display:block; width:100%; height:396px; z-index:99;"></a>
-            </li>
+            {/volist}
         </ul>
         <ol class="biaojiBtn">
-            <li class="currentBan">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+            {volist name="ads" id="vo"}
+            <li {if $i==1}class="currentBan"{/if}>{$i}</li>
+            {/volist}
         </ol>
     </div>
     <!--幻灯片结束    -->

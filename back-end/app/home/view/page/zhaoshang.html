@@ -9,7 +9,9 @@
         您当前的位置：<span class="core">课程植入<span>  
     </div>
     <div class="zhaoshang w1190  cont">
-        <img src="./slider/zhiru.png" alt="">
+        {if $ads}
+        <img src="__ROOT__/{$ads['thumb']}" class="w1190 cont"alt="">
+        {/if}
         <div class="body">
             <ul class="subchannellist">
                 <li class="depth1 current"><a>植入优势</a></li>

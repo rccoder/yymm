@@ -30,7 +30,7 @@ class Ads extends Base {
             }else{
                 $rs=$m->save($_POST);
             }
-            $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'ads-index1']):$this->json(300);
+            $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'ads-index'.input('post.tid')]):$this->json(300);
         }else{
             if(input('?get.id')){
                 $info=A::get(input('get.id'));

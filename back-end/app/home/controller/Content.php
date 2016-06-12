@@ -14,7 +14,11 @@ class Content extends Base{
         $this->assign('content',$list);
         //分类名称
         $cate=lang('content_cate');
-        $this->assign('catename',$cate[input('cate')]);       
+        $this->assign('catename',$cate[input('cate')]);
+        //广告
+        $tid=[1=>2,2=>3];
+        $ads=db('ads')->where(['tid'=>$tid[input('cate')],'status'=>1])->find();
+        $this->assign('ads',$ads);        
     	return $this->fetch();        
     }
     //文章详情
@@ -29,7 +33,10 @@ class Content extends Base{
         $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):12;//每页显示条数
         $map['order']='sort desc,id desc';
         $list=$m->getList($map);
-        $this->assign('content',$list);     
+        $this->assign('content',$list); 
+        //广告
+        $ads=db('ads')->where(['tid'=>4,'status'=>1])->find();
+        $this->assign('ads',$ads);
         return $this->fetch();         
     }
     //报名信息
