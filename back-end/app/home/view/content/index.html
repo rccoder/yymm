@@ -24,7 +24,15 @@
                                             </div>
                                             <div class="intro">
                                                 <h3 class="title">
-                                                    <a href="__ROOT__/home/content/show/id/{$vo['id']}">{$vo['title']}</a>
+
+                                                {if $vo['cate'] == 1}
+                                                    <a href="__ROOT__/home/content/show_1/id/{$vo['id']}#title">
+                                                {/if}
+                                                {if $vo['cate'] == 2}
+                                                    <a href="__ROOT__/home/content/show_2/id/{$vo['id']}#title">
+                                                {/if}
+                                                    {$vo['title']}</a>
+                                                
                                                 </h3>
                                                 <span class="data">{$vo['addtime']|date='Y年m月d日',###}</span>
                                                 <div class="abstract">

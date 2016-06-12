@@ -22,10 +22,15 @@ class Content extends Base{
     	return $this->fetch();        
     }
     //文章详情
-    public function show(){
+    public function show_1(){
         $info=C::get(input('get.id'));
         $this->assign('info',$info->toArray());
         return $this->fetch();   
+    }
+    public function show_2() {
+        $info=C::get(input('get.id'));
+        $this->assign('info',$info->toArray());
+        return $this->fetch();
     }
     //探索世界
     public function explore(){
