@@ -601,7 +601,12 @@ img {
     font-size: 22px;
     margin-bottom: 10px;
 }
-
+.lexue .post .one .intro .title a{
+  color:#333;
+}
+.lexue .post .one .intro .title a:hover, .lexue .post .one .intro .title a:visited {
+    color: #108fb4;
+}
 .lexue .post .one .intro .data {
     display: block;
     color: #999999;

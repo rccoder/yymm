@@ -2,7 +2,7 @@ $(function(){
    // 导航栏高亮
    var navlight = function() {
     var location = window.location.pathname;
-    var list = ["linian", "news", "ketang", "explore", "xiaoqu", "zhaoshang", "about"];
+    var list = ["linian", "explore", "xiaoqu", "zhaoshang", "about"];
     var flag = 0;
     for(var i = 0, l = list.length; i < l; i++) {
       if(location.indexOf(list[i]) > -1) {
