@@ -4,7 +4,7 @@
     <body>
         {include file="public/nav" /}
         <!--幻灯片开始    -->
-        <div style="width:100%; min-width:1002px; margin:0 auto 15px;   border-bottom:1px solid #b1b1b1;" class="contentImg">
+        <div style="width:100%; min-width:1190px; margin:0 auto 15px;   border-bottom:1px solid #b1b1b1;" class="contentImg">
             <ul class="bannerImg">
                 {volist name="ads" id="vo"}
                 <li style="background:url(__ROOT__/{$vo['thumb']}) center top no-repeat; display:{if $i==1}block{else}none{/if};">
@@ -94,7 +94,7 @@
                                         {/if}
                                         {/volist}
                                     </ul>
-                                    <a href="" class="more">更多 >></a>
+                                    <a href="__ROOT__/home/content/index/cate/1" class="more">更多 >></a>
                                 </div>
                             </div>
                             <!-- 乐学课堂 -->
@@ -110,7 +110,7 @@
                                         {/if}
                                         {/volist}                                    
                                     </ul>
-                                    <a href="" class="more">更多 >></a>
+                                    <a href="__ROOT__/home/content/index/cate/2" class="more">更多 >></a>
                                 </div>
                             </div>
                         </div>

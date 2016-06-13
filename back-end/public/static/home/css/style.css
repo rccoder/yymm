@@ -49,7 +49,9 @@ html button::-moz-focus-inner {
 }
 
 body {
+    /*
     overflow-x: hidden;
+    */
 }
 
 body,
@@ -212,6 +214,7 @@ img {
     background: url(../img/top.png) left top no-repeat;
     width: 100%;
     margin: 0 auto;
+    min-width: 1190px;
 }
 
 #headr .top,
@@ -601,10 +604,8 @@ img {
     font-size: 22px;
     margin-bottom: 10px;
 }
+
 .lexue .post .one .intro .title a{
-  color:#333;
-}
-.lexue .post .one .intro .title a:hover, .lexue .post .one .intro .title a:visited {
     color: #108fb4;
 }
 .lexue .post .one .intro .data {
@@ -1883,6 +1884,7 @@ img {
     width: 100%;
     background: #020201;
     height: 200px;
+    min-width: 1190px;
 }
 
 .footer .fbj {

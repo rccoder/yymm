@@ -47,6 +47,23 @@ $(function(){
        	alert('姓名和电话不能为空');
        	return false;
        }
+       
+       if(isNaN(data.telephone)) {
+        alert('电话号码错误');
+        return false;
+       }
+       if(data.age == '没有填写') {
+        alert('请填写年龄');
+        return false;
+       }
+       if(data.city == '没有填写') {
+        alert('请填写城市');
+        return false;
+       }
+       if(data.area == '没有填写') {
+        alert('请填写校区');
+        return false;
+       }
        $.post($(this).data('url'),data,function(rs){
        		alert(rs.msg);
        },'json')

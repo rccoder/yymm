@@ -1,7 +1,7 @@
 $(function() {
   $("#span_nativeplace #city").on("click", function(e) {
     console.log(222)
-    var str = '<option value="0">请选择..</option>'
+    var str = '<option value="没有填写">请选择..</option>'
     var dataArray = data[$(this).val()];
     for(var i = 0; i < dataArray.length; i++) {
       str += '<option value="'+ dataArray[i];
