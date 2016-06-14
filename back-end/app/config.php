@@ -18,4 +18,5 @@ return [
     'upload_path' => 'upload/',         //上传路径
     'lang_switch_on' => true,           // 开启语言包功能
     'lang_list' => ['zh-cn'],           // 支持的语言列表
+    'url_route_on'  =>  false,          // pathinfo 完全开启
 ];

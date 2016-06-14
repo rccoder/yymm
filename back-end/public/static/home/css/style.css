@@ -440,7 +440,7 @@ img {
     width: 560px;
     float: left;
     position: relative;
-    min-height: 250px;
+    min-height: 274px;
 }
 
 .news .news-main .new-all .title {
@@ -501,6 +501,12 @@ img {
     line-height: 1.5em;
     font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
     line-height: 2em;
+}
+
+.news .post-content img {
+    display: block;
+    max-width: 900px;
+    margin: 20px auto;
 }
 /* 关于我们文字样式，集成新闻 */
 .news .about-content {
@@ -708,7 +714,7 @@ img {
 
 .ts_list .intro {
     cursor: pointer;
-    height: 200px;
+    height: 300px;
     width: 100%;
     background: #ffffff;
     color: #333;
@@ -716,12 +722,31 @@ img {
     bottom: 30px;
     left: 0px;
     z-index: 9;
-    filter: alpha(Opacity=80);
-    -moz-opacity: 0.8;
-    -webkit-opacity: 0.8;
+    filter: alpha(Opacity=90);
+    -moz-opacity: 0.9;
+    -webkit-opacity: 0.9;
     display: none;
 }
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 4px;
+}
 
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #108FB4;
+    border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #108FB4;
+    -webkit-box-shadow: inset 0 0 6px #108FB4;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #108FB4;
+}
 .ts_list .intro .title{
     font-size: 18px;
     font-weight: bold;
@@ -731,8 +756,7 @@ img {
     padding: 0 20px;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 130px;
-
+    height: 230px;
 }
 .ts_list .intro a {
     width: 60px;
@@ -1916,12 +1940,12 @@ img {
     margin-top: 40px;
     width: 100%;
     background: #020201;
-    height: 200px;
+    height: 140px;
     min-width: 1190px;
 }
 
 .footer .fbj {
-    height: 200px;
+    height: 140px;
     width: 1320px;
 }
 
@@ -1945,6 +1969,7 @@ img {
     -moz-opacity: 0.5;
     -khtml-opacity: 0.5;
     opacity: 0.5;
+    line-height: 1.8em;
 }
 
 .footer .fbj .f3 a {
@@ -1969,7 +1994,7 @@ img {
 
 .footer .fbj .f3 {
     font-size: 12px;
-    padding-top: 72px;
+    padding-top: 60px;
     color: #dedede;
     filter: alpha(opacity=50);
     -moz-opacity: 0.5;

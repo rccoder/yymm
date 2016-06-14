@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 {include file="public/header" /}
+
 <body>
- {include file="public/nav" /}
+    {include file="public/nav" /}
     <div class="blank15"></div>
+    <div class="bread-crumbs w1190">
+        您当前的位置：<span class="core">新闻动态 / {$info['title']}<span>  
+                    </div>
+                    <div class="blank15"></div>
     <div class="news w1190">
-         <img src="__STATIC__/home/img/news.jpg" class="w1190 cont"alt="">
+        <img src="__STATIC__/home/img/news.jpg" class="w1190 cont" alt="">
         <h3 class="post-title" id="title">
             {$info['title']}
         </h3>
@@ -15,6 +20,7 @@
     </div>
     <!--页脚-->
     <div class="blank15"></div>
-{include file="public/footer" /}
+    {include file="public/footer" /}
 </body>
+
 </html>
