@@ -46,6 +46,10 @@ class Content extends Base{
     }
     //报名信息
     public function order(){
+        $count=db('order')->where($_POST)->count();
+        if($count){
+            return $this->error('该信息已经被记录，请勿重复提交');
+        }
         $_POST['addtime']=time();
         $rs=db('order')->insert($_POST);
         if($rs){
@@ -53,5 +57,20 @@ class Content extends Base{
         }else{
             return $this->error('报名失败');
         }
+    }
+    //获取校区信息
+    public function getCampus(){
+        if(input('?get.p')){
+            $data=db('campus')->where('province',input('get.p'))->select();
+            foreach($data as $v){
+                $list[]=$v['campus'];
+            }
+        }else{
+            $data=db('campus')->select();
+            foreach($data as $v){
+                $list[$v['province']][]=$v['campus'];
+            }            
+        }
+        return json_encode($list);
     }
 }

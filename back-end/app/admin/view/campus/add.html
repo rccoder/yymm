@@ -1,0 +1,45 @@
+<style type="text/css">
+    label.control-label{ width:85px;}
+</style>
+<form action="__ROOT__/admin/campus/add" method="post" data-toggle="ajaxform">
+    <div class="bjui-pageContent">
+
+        <input type="hidden" name="id" value="{$info.id}" />
+        <table class="table-bordered table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="album_name" class="control-label x85">
+                            校区名称：
+                        </label>
+                        <input type="text" name="campus" id="album_name" value="{$info.campus}" size="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="control-label x85">
+                            所属地区：
+                        </label>
+                        <select name="province" data-toggle="selectpicker">
+                            {volist name="province" id="v"}
+                            <option value="{$v.name}" {if $info.province==$v.name}selected{/if}>{$v.name}</option>
+                            {/volist}
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="4">
+                        <div class="page_but" style="margin-left:85px;">
+                            <ul>
+                                <li><button type="submit" class="but btn-blue" id="btn_submit" data-icon="save">保存</button></li>
+                                <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</form>

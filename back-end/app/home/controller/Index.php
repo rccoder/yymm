@@ -13,6 +13,9 @@ class Index extends Base{
             $content[$v['cate']][]=$v;
         }
         $this->assign('content',$content);
+        //城市
+        $province=db('province')->where('pid=0')->field('name')->select();
+        $this->assign('province',$province);        
     	return $this->fetch();
     }
 }
