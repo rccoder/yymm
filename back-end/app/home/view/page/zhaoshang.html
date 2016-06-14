@@ -9,6 +9,9 @@
         您当前的位置：<span class="core">课程植入<span>  
     </div>
     <div class="zhaoshang w1190  cont">
+		        {if $ads}
+				<img src="__ROOT__/{$ads['thumb']}" class="w1190 cont"alt="">
+				{/if}
         <img src="__STATIC__/home/slider/zhiru.png" alt="">
         <div class="body">
             <ul class="subchannellist">
@@ -19,9 +22,7 @@
         <div class="body_content">
             <div class="content content1 news w1190">
                 <div class="news-top">
-                    {if $ads}
-     <img src="__ROOT__/{$ads['thumb']}" class="w1190 cont"alt="">
-       {/if}
+					<img src="__STATIC__/home/img/news.png" alt="">
                     植入优势
                 </div>
                 <div class="blank15"></div>
