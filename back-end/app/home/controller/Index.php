@@ -8,7 +8,7 @@ class Index extends Base{
         $ads=db('ads')->where(['status'=>1,'tid'=>1])->select();
         $this->assign('ads',$ads);
         //文章
-        $rs=db('content')->order('sort desc,id desc')->field('id,title,cate')->select();
+        $rs=db('content')->order('sort desc,id desc')->field('id,title,cate,addtime')->select();
         foreach($rs as $v){
             $content[$v['cate']][]=$v;
         }

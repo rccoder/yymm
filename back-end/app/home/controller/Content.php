@@ -9,7 +9,7 @@ class Content extends Base{
     	$m=new C();
     	$map['pagesize']=input('?get.pageSize')?input('get.pageSize'):5;//每页显示条数
         $map['order']='sort desc,id desc';
-        $map['where']=['cate'=>input('cate')];
+        $map['where']=['cate'=>input('get.cate')];
         $list=$m->getList($map);
         $this->assign('content',$list);
         //分类名称
@@ -35,7 +35,7 @@ class Content extends Base{
     //探索世界
     public function explore(){
         $m=new E();
-        $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):12;//每页显示条数
+        $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):4;//每页显示条数
         $map['order']='sort desc,id desc';
         $list=$m->getList($map);
         $this->assign('content',$list); 

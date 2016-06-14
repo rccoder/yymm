@@ -404,6 +404,7 @@ img {
     height: 40px;
     margin: 0 auto;
     color: #333;
+    line-height: 40px;
 }
 
 .bread-crumbs .core {
@@ -420,8 +421,9 @@ img {
 .news .news-top {
     height: 50px;
     color: #fffff;
-    background-color: #52afca;
+    background-color: #26a5ca;
     line-height: 50px;
+    font-size: 1.2em;
 }
 
 .news .news-top img {
@@ -437,6 +439,8 @@ img {
 .news .news-main .new-all {
     width: 560px;
     float: left;
+    position: relative;
+    min-height: 250px;
 }
 
 .news .news-main .new-all .title {
@@ -455,20 +459,29 @@ img {
 
 .news .news-main .new-all .content .more {
     color: #108FB4;
-    float: right;
-    margin-right: 100px;
+    /* float: right; */
+    /* margin-right: 100px; */
+    position: absolute;
+    bottom: -26px;
+    right: 0px;
 }
 
 .news .news-main .new-all .content li {
     line-height: 28px;
+    width: 100%;
 }
-
+.news .news-main .new-all .content .data {
+    float: right;
+}
 .news .news-main .new-all .content ul li a {
     display: block;
-    width: 500px;
+    width: 400px;
     color: #333;
     overflow: hidden;
     text-overflow: ellipsis;
+    float: left;
+    width: 480px;
+    white-space: nowrap;
 }
 
 .news .news-main .new-all .content a:hover {
@@ -480,12 +493,14 @@ img {
     color:#333;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 30px
+    margin: 30px auto;
 }
 
 .news .post-content {
     color: #333;
     line-height: 1.5em;
+    font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    line-height: 2em;
 }
 /* 关于我们文字样式，集成新闻 */
 .news .about-content {
@@ -611,11 +626,13 @@ img {
 .lexue .post .one .intro .data {
     display: block;
     color: #999999;
-    margin-bottom: 8px;
+    height: 28px;
+    line-height: 28px;
 }
 
 .lexue .post .one .intro .abstract {
     color: #999999;
+    margin-top: 10px;
 }
 
 
@@ -625,7 +642,16 @@ img {
     color: #333;
     text-align: right;
 }
-
+.page-nav li {
+    display: inline-block;
+    cursor: pointer;
+}
+.page-nav .active span{
+    background-color: #108FB4;
+}
+.page-nav .disabled span {
+    background: #bfbebe;
+}
 .page-nav span,
 .page-nav a {
     color: #333;
@@ -700,6 +726,13 @@ img {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+}
+.ts_list .intro .content {
+    padding: 0 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 130px;
+
 }
 .ts_list .intro a {
     width: 60px;

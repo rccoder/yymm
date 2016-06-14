@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 {include file="public/header" /}
+
 <body>
-{include file="public/nav" /}
+    {include file="public/nav" /}
     <div class="blank15"></div>
     <!-- 面包屑 -->
     <div class="bread-crumbs w1190">
@@ -27,12 +28,16 @@
           <img src="__ROOT__/{$vo['thumb']}" id="theimg" /><span id="tit">{$vo['title']}</span>
         </li>
         {/volist}
-      </ul>
+        </ul>
+        
     </div>
+    <div class="page-nav">
+            {$content.page}
+        </div>
     </div>
     <!--页脚-->
-{include file="public/footer" /}
-<script type="text/javascript" src="__STATIC__/home/script/tansuo.js"></script>
+    {include file="public/footer" /}
+    <script type="text/javascript" src="__STATIC__/home/script/tansuo.js"></script>
 </body>
 
 </html>

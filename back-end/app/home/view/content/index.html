@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-    {include file="public/header" /}
-    <body>
-        {include file="public/nav" /}
-        <div class="blank15"></div>
-        <!-- 面包屑 -->
-        <div class="bread-crumbs w1190">
-            您当前的位置：<span class="core">{$catename}<span>  
+{include file="public/header" /}
+
+<body>
+    {include file="public/nav" /}
+    <div class="blank15"></div>
+    <!-- 面包屑 -->
+    <div class="bread-crumbs w1190">
+        您当前的位置：<span class="core">{$catename}<span>  
                     </div>
                     <div class="blank15"></div>
                     <div class="content w1190 cont">
@@ -35,22 +36,22 @@
                                                 
                                                 </h3>
                                                 <span class="data">{$vo['addtime']|date='Y年m月d日',###}</span>
-                                                <div class="abstract">
-                                                   {$vo['abstract']}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/volist}
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="page-nav">
-                                {$page}
-                            </div>
-                        </div>
-                    </div>
-                    <!--页脚-->
-                    {include file="public/footer" /}
-                    </body>
+        <div class="abstract">
+            {$vo['abstract']}
+        </div>
+    </div>
+    </div>
+    {/volist}
+    </li>
+    </ul>
+    </div>
+    <div class="page-nav">
+        {$content.page}
+    </div>
+    </div>
+    </div>
+    <!--页脚-->
+    {include file="public/footer" /}
+</body>
 
-                    </html>
+</html>
