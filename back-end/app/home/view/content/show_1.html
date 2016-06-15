@@ -10,13 +10,29 @@
                     </div>
                     <div class="blank15"></div>
     <div class="news w1190">
+        {if $info['cate'] == 1}
         <img src="__STATIC__/home/img/news.jpg" class="w1190 cont" alt="">
+        {/if}
+        {if $info['cate'] == 2}
+        <img src="__STATIC__/home/img/lexue.jpg" class="w1190 cont" alt="">
+        {/if}
         <h3 class="post-title" id="title">
             {$info['title']}
         </h3>
         <div class="post-content">
             {$info['content']}
         </div>
+        <div class="blank15"></div>
+        <div class="post-left post-neighbor">
+            {if $left}
+            <span>上一篇: </span>
+        <a href="__ROOT__/home/content/show_1/id/{$left.id}#{$left.title}">{$left['title']}</a> {/if}
+    </div>
+    <div class="post-right post-neighbor">
+        {if $right}
+        <span>下一篇: </span>
+        <a href="__ROOT__/home/content/show_1/id/{$right.id}#{$right.title}">{$right['title']}</a> {/if}
+    </div>
     </div>
     <!--页脚-->
     <div class="blank15"></div>

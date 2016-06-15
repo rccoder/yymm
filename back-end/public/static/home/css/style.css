@@ -475,12 +475,11 @@ img {
 }
 .news .news-main .new-all .content ul li a {
     display: block;
-    width: 400px;
     color: #333;
     overflow: hidden;
     text-overflow: ellipsis;
     float: left;
-    width: 480px;
+    width: 430px;
     white-space: nowrap;
 }
 
@@ -507,6 +506,27 @@ img {
     display: block;
     max-width: 900px;
     margin: 20px auto;
+}
+
+.post-neighbor {
+    margin: 30px 0;
+}
+.post-neighbor span {
+    color: #108FB4;
+    padding-right: 10px;
+    font-size: 1.1em;
+}
+.post-neighbor a{
+    color: #333;
+}
+.post-neighbor a:hover {
+    color: #108FB4;
+}
+.post-left {
+    float: left;
+}
+.post-right {
+    float: right;
 }
 /* 关于我们文字样式，集成新闻 */
 .news .about-content {
@@ -722,11 +742,15 @@ img {
     bottom: 30px;
     left: 0px;
     z-index: 9;
-    filter: alpha(Opacity=90);
+    filter: alpha(opacity=90);
     -moz-opacity: 0.9;
     -webkit-opacity: 0.9;
     display: none;
+    opacity: 0.9;
+    zoom: 1;
+    filter: "alpha(opacity=90)";
 }
+
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
     width: 4px;

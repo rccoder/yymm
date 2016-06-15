@@ -26,6 +26,14 @@ class Base extends Controller {
             $navigation=db('navigation')->select();
             cache('navigation',$navigation);
         }
+        // 文章 
+        if(!cache('post') && $info.cate == 1) {
+            $rs = db('content')->order('sort desc,id desc')->field('id', 'title', 'cate')->select();
+            foreach($rs as $r) {
+                $post[$r['cate']][] = $r;
+            }
+            cache('post', $post);
+        }
         $this->assign('navigation', cache('navigation'));
     }
 

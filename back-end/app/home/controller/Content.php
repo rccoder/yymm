@@ -22,14 +22,38 @@ class Content extends Base{
     	return $this->fetch();        
     }
     //文章详情
+    /*
+    public function show(){
+        $info=C::get(input('get.id'));
+
+        foreach(cache('post')[$info.cate] as $p) {
+            
+        }
+        //$left=db('content')->order('sort desc,id desc')->where(['cate'=>$info.cate])->field('id', 'title')->select();
+        
+        //$right=C::get(input('get.id')-1);
+        $this->assign('info',$info);
+        $this->assign('post', cache('post'));
+        //$this->assign('left',$left);
+        //$this->assign('right',$right);
+        return $this->fetch();   
+    }
+    */
     public function show_1(){
         $info=C::get(input('get.id'));
-        $this->assign('info',$info->toArray());
+        $left=C::get(input('get.id')+1);
+        $right=C::get(input('get.id')-1);
+        $this->assign('info',$info);
+        $this->assign('left',$left);
+        $this->assign('right',$right);
         return $this->fetch();   
     }
     public function show_2() {
         $info=C::get(input('get.id'));
-        $this->assign('info',$info->toArray());
+        $right=C::get(input('get.id')-1);
+        $this->assign('info',$info);
+        $this->assign('left',$left);
+        $this->assign('right',$right);
         return $this->fetch();
     }
     //探索世界

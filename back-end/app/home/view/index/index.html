@@ -94,7 +94,7 @@
                                     <ul>
                                         {volist name="content[1]" id="vo"}
                                         {if $i<=8}
-                                        <li> <a href="__ROOT__/home/content/show_1/id/{$vo['id']}#title">【新闻通知】{$vo['title']}</a><span class="data">{$vo['addtime']|date='m月d日',###}</span></li>
+                                        <li> <a href="__ROOT__/home/content/show_1/id/{$vo['id']}#title">【新闻通知】{$vo['title']}</a><span class="data">{$vo['addtime']|date='Y-m-d',###}</span></li>
         {/if} {/volist}
         </ul>
         <a href="__ROOT__/home/content/index/cate/1" class="more">更多 >></a>
@@ -108,7 +108,7 @@
         <div class="content">
             <ul>
                 {volist name="content[2]" id="vo"} {if $i
-                <=8} <li> <a href="__ROOT__/home/content/show_2/id/{$vo['id']}#title">【乐学课堂】{$vo['title']}</a><span class="data">{$vo['addtime']|date='m月d日',###}</span></li>
+                <=8} <li> <a href="__ROOT__/home/content/show_2/id/{$vo['id']}#title">【乐学课堂】{$vo['title']}</a><span class="data">{$vo['addtime']|date='Y-m-d',###}</span></li>
                     {/if} {/volist}
             </ul>
             <a href="__ROOT__/home/content/index/cate/2" class="more">更多 >></a>

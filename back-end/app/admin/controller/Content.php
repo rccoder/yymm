@@ -11,8 +11,10 @@ class Content extends Base {
     	$m=new C();
     	$map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
         $map['order']='sort desc,id desc';
+        $map['where']=['cate'=>input('get.cate')];
         $list=$m->getList($map);
         $this->assign('content',$list); 
+        $this->assign('cate', input('get.cate'));
     	return $this->fetch();
     }
     //添加文章
@@ -30,7 +32,10 @@ class Content extends Base {
     		if(input('?get.id')){
     			$info=C::get(input('get.id'));
     			$this->assign('info',$info);
-    		}
+    		} else if(input('?get.cate')) {
+                $info['cate'] = input('?get.cate');
+                $this->assign('info',$info);
+            } 
     		return $this->fetch();
     	}
     }

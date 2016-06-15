@@ -17,6 +17,17 @@
         <div class="post-content">
             {$info['content']}
         </div>
+        <div class="blank15"></div>
+        <div class="post-left post-neighbor">
+            {if $left}
+            <span>上一篇: </span>
+        <a href="__ROOT__/home/content/show_2/id/{$left.id}#{$left.title}">{$left['title']}</a> {/if}
+    </div>
+    <div class="post-right post-neighbor">
+        {if $right}
+        <span>下一篇: </span>
+        <a href="__ROOT__/home/content/show_2/id/{$right.id}#{$right.title}">{$right['title']}</a> {/if}
+    </div>
     </div>
     <!--页脚-->
     <div class="blank15"></div>
