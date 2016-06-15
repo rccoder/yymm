@@ -1,0 +1,110 @@
+<script type="text/javascript">
+    $(function() {
+        $.CurrentNavtab.find('#btn_submit').click(function() {
+            $.CurrentNavtab.find('#j_custom_form').bjuiajax('ajaxForm', {
+                //				confirmMsg: '确认提交吗?',
+                callback: function(data) {
+                    if (data.statusCode == 200) {
+                        $(this).alertmsg('ok', data.message)
+                        $(this).navtab('refresh', 'Article-lists');
+                        $(this).navtab('closeCurrentTab');
+                    }
+                    if (data.statusCode == 300)
+                        $(this).alertmsg('error', data.message)
+                }
+            })
+        })
+    })
+
+    function pic_upload_success(file, data) {
+        var json = $.parseJSON(data)
+        if (data.statusCode == 200)
+            $(this).alertmsg('ok', data.message)
+        if (data.status == 300)
+            $(this).alertmsg('error', data.message)
+        $(this).bjuiajax('ajaxDone', json)
+        if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
+            $('#j_custom_thumb').val(json.src);
+            $('#j_custom_pic').html('<img class="sp-thumb" src=__ROOT__/' + json.src + ' />');
+        }
+    }
+</script>
+<form action="__ROOT__/admin/content/addorder" method="post" data-toggle="validate" data-alertmsg="false">
+    <input type="hidden" name="id" value="{$info['id']}" />
+    <div class="bjui-pageContent">
+        <table class="table-bordered table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="name" class="control-label x85">
+							姓名：
+						</label>
+                        <input type="text" name="name" id="name" value="{$info.name}" size="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="telephone" class="control-label x85">
+							手机号：
+						</label>
+                        <input type="text" name="telephone" id="telephone" value="{$info.telephone}" size="30">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="age" class="control-label x85">
+							年龄：
+						</label>
+                        <select name="age" data-toggle="selectpicker" id="campus_select">
+                            <option value="没有填写">孩子年龄</option>
+                            <option value="3-5岁"  {if $info.age == "3-5岁"} selected {/if}>3-5岁</option>
+                            <option value="6-8岁"  {if $info.age == "6-8岁"} selected {/if}>6-8岁</option>
+                            <option value="9-12岁"  {if $info.age == "9-12岁"} selected {/if}>9-12岁</option>
+                            <option value="13-18岁"  {if $info.age == "13-18岁"} selected {/if}>13-18岁</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="city" class="control-label x85">
+							城市：
+						</label>
+                        <select name="city" data-toggle="selectpicker" id="campus_select">
+                            {volist name="province" id="vo"}
+                            <option value="{$vo['name']}" {if $info.city == $vo['name']} selected {/if}>{$vo['name']}</option>
+                            {/volist}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="area" class="control-label x85">
+							区域：
+						</label>
+                        <select name="area" data-toggle="selectpicker" id="campus_select">
+                            {volist name="campus" id="vo"}
+                            <option value="{$vo['campus']}" {if $info.area == $vo['campus']} selected {/if}>{$vo['campus']}</option>
+                            {/volist}
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bjui-pageFooter">
+        <ul>
+            <li style="float: left;margin-left: 90px;">
+                <button type="submit" class="btn-default" data-icon="save">
+					保存
+				</button>
+            </li>
+
+            <li style="float: left;">
+                <button type="button" class="btn-close" data-icon="close">
+					取消
+				</button>
+            </li>
+
+        </ul>
+    </div>
+</form>

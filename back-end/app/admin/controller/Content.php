@@ -29,13 +29,16 @@ class Content extends Base {
             }
             $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'content-index']):$this->json(300);    		
     	}else{
+            
     		if(input('?get.id')){
     			$info=C::get(input('get.id'));
     			$this->assign('info',$info);
     		} else if(input('?get.cate')) {
-                $info['cate'] = input('?get.cate');
+                $info['cate'] = input('get.cate');
                 $this->assign('info',$info);
-            } 
+            }
+            //print_r(input('?get.cate'));
+            //print_r($info);
     		return $this->fetch();
     	}
     }
@@ -82,10 +85,61 @@ class Content extends Base {
     //报名管理
     public function order(){
     	$m=new O();
-    	$map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
-        $map['order']='id desc';
-        $list=$m->getList($map);
-        $this->assign('content',$list); 
+        if(input('?get.city')) {
+            $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
+            $map['order']='id desc';
+            $map['where']=['city'=>input('get.city')];
+            $list=$m->getList($map);
+            $this->assign('content',$list);
+        } else if(input('?get.campus')) {
+            $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
+            $map['order']='id desc';
+            $map['where']=['area'=>input('get.campus')];
+            $list=$m->getList($map);
+            $this->assign('content',$list);
+        } else {
+            $map['pagesize']=input('?get.pageSize')?input('get.pageSize'):20;//每页显示条数
+            $map['order']='id desc';
+            $list=$m->getList($map);
+            $this->assign('content',$list);
+
+        }
+
+        $province=db('province')->where('pid=0')->field('name')->select();
+        $this->assign('province',$province);
+
+        $campus=db('campus')->field('campus')->select();
+        $this->assign('campus', $campus);
+    	 
     	return $this->fetch();
     }
+
+    public function addorder(){
+        $m=new O();
+        if(IS_POST){
+            if(input('post.id')){
+                $rs=$m->save($_POST,['id'=>input('post.id')]);
+            }else{
+                $_POST['addtime']=time();
+                $rs=$m->save($_POST);
+            }
+            $rs?$this->json(200,'保存成功',['closeCurrent'=>1,'tabid'=>'content-explore']):$this->json(300);          
+        }else{
+            if(input('?get.id')){
+                $info=O::get(input('get.id'));
+                $this->assign('info',$info);
+            }
+            $province=db('province')->where('pid=0')->field('name')->select();
+            $this->assign('province',$province);
+            $campus=db('campus')->field('campus')->select();
+            $this->assign('campus', $campus);
+            return $this->fetch();
+        }        
+    }
+
+    public function deleteorder(){
+        $info=O::get(input('get.id'));
+        $rs=$info->delete();
+        $rs?$this->json():$this->json(300);
+    }  
 }

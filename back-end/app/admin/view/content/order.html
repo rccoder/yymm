@@ -1,66 +1,98 @@
 <script type="text/javascript">
-	function changecate() {
-		$.CurrentNavtab.find('#towhere').css('display', 'inline-block');
-	}
+    function changecate() {
+        $.CurrentNavtab.find('#towhere').css('display', 'inline-block');
+    }
 </script>
-<div class="bjui-pageHeader"  style="height:38px">
-	<a href="__ROOT__/admin/content/add" class="btn btn-blue" data-toggle="dialog" data-width="1000" data-height="600" data-id="content_add">发布文章</a>
+
+<div class="bjui-pageHeader" style="height:38px">
+    <select name="cate" data-toggle="selectpicker" id="city_select">
+    	{volist name="province" id="vo"}
+        <option value="{$vo['name']}">{$vo['name']}</option>
+    	{/volist}
+    </select>
+    <a href="__ROOT__/admin/content/order/city/{$province[0]['name']}" id="city_select_href" class="btn btn-blue" data-toggle="navtab" data-options="{ id:'content-order', faicon:'caret-right'}" data-fresh="true">筛选城市-{$province[0]['name']}</a>
+    <script>
+        $(function() {
+            $("#city_select").on('change', function() {
+                var hrefArray = $("#city_select_href").attr('href').split("/");
+                hrefArray[hrefArray.length - 1] = $("#city_select").val();
+                $("#city_select_href").attr('href', hrefArray.join("/"));
+                $("#city_select_href").text('筛选城市-' + $("#city_select").val());
+            })
+        })
+    </script>
+    <select name="cate" data-toggle="selectpicker" id="campus_select">
+    	{volist name="campus" id="vo"}
+        <option value="{$vo['campus']}">{$vo['campus']}</option>
+    	{/volist}
+    </select>
+    <a href="__ROOT__/admin/content/order/campus/{$campus[0]['campus']}" id="campus_select_href" class="btn btn-blue" data-toggle="navtab" data-options="{ id:'content-order', faicon:'caret-right'}" data-fresh="true">筛选校区-{$campus[0]['campus']}</a>
+    <script>
+        $(function() {
+            $("#campus_select").on('change', function() {
+                var hrefArray = $("#campus_select_href").attr('href').split("/");
+                hrefArray[hrefArray.length - 1] = $("#campus_select").val();
+                $("#campus_select_href").attr('href', hrefArray.join("/"));
+                $("#campus_select_href").text('筛选校区-' + $("#campus_select").val());
+            })
+        })
+    </script>
 </div>
 
 <div class="bjui-pageContent tableContent">
-	<form name="sortform" data-toggle="ajaxform" action="__APP__/Article/sort" method="post">
-		<table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
-			<thead>
-				<tr style="height: 36px; line-height: 36px;">
-					<th style="background:#1078C1;color:#fff;" width="26">
-						<input type="checkbox" class="checkboxCtrl"  data-group="ids" data-toggle="icheck">
-					</th>
-					<th style="background:#1078C1;color:#fff;">ID</th>
-					<th style="background:#1078C1;color:#fff;">姓名</th>
-					<th style="background:#1078C1;color:#fff;">电话</th>
-					<th style="background:#1078C1;color:#fff;">年龄</th>
-					<th style="background:#1078C1;color:#fff;">城市</th>
-					<th style="background:#1078C1;color:#fff;">区域</th>
-					<th style="background:#1078C1;color:#fff;"  width="200">报名时间</th>
-					<th style="background:#1078C1;color:#fff;display: none;" width="00">操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				{volist name="content.data" id="v"}
-				<tr data-id="{$k}">
-					<td>
-						<input type="checkbox" name="ids" data-toggle="icheck" value="{$v.id}">
-					</td>
-					<td>{$v.id}</td>
-					<td>{$v.name}</td>
-					<td>{$v.telephone}</td>
-					<td>{$v.age}</td>
-					<td>{$v.city}</td>
-					<td>{$v.area}</td>
-					<td>{$v['addtime']|date='Y-m-d H:i:s',###}</td>
-					<td style="display: none;">
-						<a href="__ROOT__/admin/content/add/id/{$v.id}" class="btn btn-green" data-toggle="dialog"  data-id="content_add" data-width="1000" data-height="600">编辑</a>
-						<a href="__ROOT__/admin/content/delete/id/{$v.id}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
-					</td>
-				</tr>
-				{/volist}
-			</tbody>
-		</table>
-	</form>
+    <form name="sortform" data-toggle="ajaxform" action="__APP__/Article/sort" method="post">
+        <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+            <thead>
+                <tr style="height: 36px; line-height: 36px;">
+                    <th style="background:#1078C1;color:#fff;" width="26">
+                        <input type="checkbox" class="checkboxCtrl" data-group="ids" data-toggle="icheck">
+                    </th>
+                    <th style="background:#1078C1;color:#fff;">ID</th>
+                    <th style="background:#1078C1;color:#fff;">姓名</th>
+                    <th style="background:#1078C1;color:#fff;">电话</th>
+                    <th style="background:#1078C1;color:#fff;">年龄</th>
+                    <th style="background:#1078C1;color:#fff;">城市</th>
+                    <th style="background:#1078C1;color:#fff;">区域</th>
+                    <th style="background:#1078C1;color:#fff;" width="200">报名时间</th>
+                    <th style="background:#1078C1;color:#fff;" width="200">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {volist name="content.data" id="v"}
+                <tr data-id="{$k}">
+                    <td>
+                        <input type="checkbox" name="ids" data-toggle="icheck" value="{$v.id}">
+                    </td>
+                    <td>{$v.id}</td>
+                    <td>{$v.name}</td>
+                    <td>{$v.telephone}</td>
+                    <td>{$v.age}</td>
+                    <td>{$v.city}</td>
+                    <td>{$v.area}</td>
+                    <td>{$v['addtime']|date='Y-m-d H:i:s',###}</td>
+                    <td>
+                        <a href="__ROOT__/admin/content/addorder/id/{$v.id}" class="btn btn-green" data-toggle="dialog" data-id="content_add" data-width="1000" data-height="600">编辑</a>
+                        <a href="__ROOT__/admin/content/deleteorder/id/{$v.id}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+            </tbody>
+        </table>
+    </form>
 </div>
 
 <div class="bjui-pageFooter">
-	<div class="pages">
-		<span>每页&nbsp;</span>
-		<div class="selectPagesize">
+    <div class="pages">
+        <span>每页&nbsp;</span>
+        <div class="selectPagesize">
             <select data-toggle="selectpicker" data-toggle-change="changepagesize">
                 {volist name="page_list" id="v"}
                 <option value="{$v}">{$v}</option>
                 {/volist}
 			</select>
-		</div>
-		<span>&nbsp;条，共 {$content.total} 条</span>
-	</div>
-	<div class="pagination-box" data-toggle="pagination" data-total="{$total}" data-page-size="{$pagesize}" data-page-current="{$pageCurrent}">
-	</div>
+        </div>
+        <span>&nbsp;条，共 {$content.total} 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="{$total}" data-page-size="{$pagesize}" data-page-current="{$pageCurrent}">
+    </div>
 </div>

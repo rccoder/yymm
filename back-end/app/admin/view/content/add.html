@@ -13,7 +13,8 @@
     }
 </script>
 <form action="__ROOT__/admin/content/add/" method="post" data-toggle="validate" data-alertmsg="false">
-    <input type="hidden" name="id" value="{$info['id']}" />	
+    <input type="hidden" name="id" value="{$info['id']}" />
+
     <div class="bjui-pageContent">
         <table class="table-bordered table-condensed table-hover" width="100%">
             <tbody>
@@ -27,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label  class="control-label x85">
+                        <label class="control-label x85">
                             分类：
                         </label>
                         <select name="cate" data-toggle="selectpicker">
@@ -52,13 +53,13 @@
                             <input type="hidden" name="thumb" value="{$info.thumb}" id="j_custom_thumb">
                         </div>
                     </td>
-                </tr>				
+                </tr>
                 <tr>
                     <td>
-                        <label for="abstract" class="control-label x85" >
+                        <label for="abstract" class="control-label x85">
                             内容摘要：
                         </label>
-                        <textarea name="abstract" id="abstract"  cols="35" data-height="auto">{$info.abstract}</textarea>
+                        <textarea name="abstract" id="abstract" cols="35" data-height="auto">{$info.abstract}</textarea>
                     </td>
                 </tr>
                 <tr>
@@ -75,7 +76,7 @@
     </div>
     <div class="bjui-pageFooter">
         <ul>
-            <li  style="float: left;margin-left: 90px;">
+            <li style="float: left;margin-left: 90px;">
                 <button type="submit" class="btn-default" data-icon="save">
                     保存
                 </button>
@@ -90,4 +91,3 @@
         </ul>
     </div>
 </form>
-
